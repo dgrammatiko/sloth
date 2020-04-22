@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4.0" type="template" client="site">
+  <name>sloth</name>
+  <version>0.0.1</version>
+  <creationDate>19/03/2020</creationDate>
+  <author>Dimitris Grammatikogiannis</author>
+  <authorEmail>d.grammatiko@gmail.com</authorEmail>
+  <copyright>Copyright (C) 2020 Dimitris Grammatikogiannis. All rights reserved.</copyright>
+  <description>Another (hopefully not slothy) template</description>
+  <files>
+    <filename>index.php</filename>
+    <filename>templateDetails.xml</filename>
+    <filename>template_preview.png</filename>
+    <filename>template_thumbnail.png</filename>
+  </files>
+  <media folder="media" destination="templates/site/sloth">
+    <folder>css</folder>
+    <folder>js</folder>
+    <folder>fonts</folder>
+    <folder>images</folder>
+  </media>
+  <positions>
+    <position>header</position>
+    <position>debug</position>
+    <position>footer</position>
+  </positions>
+  <languages folder="language">
+    <language tag="en-GB">en-GB/tpl_sloth.ini</language>
+    <language tag="en-GB">en-GB/tpl_sloth.sys.ini</language>
+  </languages>
+</extension>

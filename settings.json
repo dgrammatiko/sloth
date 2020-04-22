@@ -1,0 +1,15 @@
+{
+  "options": {
+    "git": {
+      "clone": [
+        {
+          "repo": "git@github.com:joomla/joomla-cms",
+          "branch": "4.0-dev",
+          "shallow": true
+        }
+      ]
+    },
+    "destinationPath": "_www",
+    "template": "sloth"
+  }
+}

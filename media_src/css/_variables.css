@@ -1,0 +1,11 @@
+root {
+    --fg-color: #000;
+    --bg-color: #fff;
+    --menu-bar-fg-color: #fff;
+    --menu-bar-bg-color: #333;
+    --menu-accent-color: #f0f0f0;
+    --link-color: blue;
+    --link-hover-color: darkblue;
+    
+
+}

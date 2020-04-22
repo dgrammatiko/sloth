@@ -1,0 +1,48 @@
+{
+  "name": "sloth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "i": "node ./cli/run.js -i",
+    "l": "node ./cli/run.js -l",
+    "b": "node ./cli/run.js -b media_src",
+    "init": "npm run i && npm run l && npm run b",
+    "lint-css": "npx stylelint media_src/css/.",
+    "lint-js": "npx eslint media_src/js/.",
+    "lint": "npm run lint-css && npm run lint-js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dgrammatiko/sloth.git"
+  },
+  "author": "Dimitris Grammatikogiannis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dgrammatiko/sloth/issues"
+  },
+  "homepage": "https://github.com/dgrammatiko/sloth#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "chalk": "^3.0.0",
+    "commander": "^5.0.0",
+    "cssnano": "^4.1.10",
+    "eslint": "^6.8.0",
+    "fdir": "^2.0.3",
+    "fs-extra": "^8.1.0",
+    "git-clone": "^0.1.0",
+    "postcss": "^7.0.27",
+    "postcss-cli": "^7.1.0",
+    "postcss-custom-media": "^7.0.8",
+    "postcss-custom-selectors": "^5.1.2",
+    "postcss-discard-comments": "^4.0.2",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-mixins": "^6.2.3",
+    "postcss-nested": "^4.2.1",
+    "recursive-readdir": "^2.2.2",
+    "rollup": "^2.1.0",
+    "stylelint": "^13.2.1",
+    "stylelint-config-recommended": "^3.0.0"
+  },
+  "dependencies": {}
+}
