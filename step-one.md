@@ -10,6 +10,12 @@
 git clone git@github.com:dgrammatiko/sloth.git
 ```
 
+- Switch branch
+
+```bash
+git checkout step-1
+```
+
 - Install dependancies
 
 ```bash
