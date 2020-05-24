@@ -10,27 +10,13 @@ if (!$list)
 	return;
 }
 
-$firstImages = json_decode($list[0]->images);
-
-$image = '';
-
-if (!empty($firstImages->image_intro)) {
-	$image = '<img src="' . $firstImages->image_intro . '" alt="' . $firstImages->image_intro_alt .'" />';
-	if (PluginHelper::isEnabled('content', 'responsive')) {
-		JLoader::register('Ttc\Freebies\Responsive\Helper', JPATH_ROOT . '/plugins/content/responsive/helper.php', true);
-		$helper = new \Ttc\Freebies\Responsive\Helper;
-		$image = $helper->transformImage($image, [200, 360]);
-	}
-}
-
 echo
 
 '<section>',
 '<header class="major">',
 	'<h2>' . $list[0]->title . '</h2>',
-'</header>';
-
-echo '<div class="posts">';
+'</header>',
+'<div class="posts">';
 
 for ($i = 0; $i < count($list); $i++) {
 	$firstImages = json_decode($list[$i]->images);
