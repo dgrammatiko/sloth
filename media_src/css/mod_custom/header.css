@@ -1,0 +1,93 @@
+#header {
+  align-items: center;
+  border-bottom: 5px solid var(--primary);
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  padding: 0;
+}
+
+#header > .social {
+  display: flex;
+  list-style-type: none;
+  margin: 0 0 0 auto;
+}
+
+.social > li a {
+  display: inline-flex;
+  align-items: center;
+}
+
+.social-icon {
+  width: 2em;
+  height: 2em;
+}
+
+/*  BURGER
+========================================== */
+.burger {
+  border: 0;
+  box-shadow: none;
+  z-index: 10;
+  height: auto;
+  width: 2rem;
+}
+
+.burger span {
+  position: relative;
+  margin-top: 9px;
+  margin-bottom: 9px;
+  user-select: none;
+  top: 50%;
+  left: 50%;
+  margin-left: -15px;
+}
+.burger span, .burger span::before, .burger span::after {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: var(--primary);
+  outline: 1px solid transparent;
+  transition-property: background-color, transform;
+  transition-duration: 0.3s;
+}
+.burger span::before, .burger span::after {
+  position: absolute;
+  content: "";
+}
+.burger span::before {
+  top: -9px;
+}
+.burger span::after {
+  top: 9px;
+}
+.burger.clicked span {
+  background-color: transparent;
+}
+.burger.clicked span::before {
+  transform: translateY(9px) rotate(45deg);
+}
+.burger.clicked span::after {
+  transform: translateY(-9px) rotate(-45deg);
+}
+.burger.clicked span:before, .burger.clicked span:after {
+  background-color: var(--primary);
+}
+.burger:hover {
+  cursor: pointer;
+}
+
+.logo {
+  padding: 1rem;
+}
+
+.social li {
+  line-height: 0;
+}
+
+@media screen and (max-width: 422px) {
+  .burger {
+    margin-top: 1rem;
+  }
+}

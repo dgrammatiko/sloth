@@ -30,5 +30,14 @@ module.exports.link = () => {
           }
       })
     });
+
+    if (!fs.existsSync(`${settings.options.destinationPath}/templates/${dest}/images`)
+      || !fs.readlinkSync(`${settings.options.destinationPath}/templates/${dest}/images`)) {
+      console.log(chalk.yellow(`Linking css -> ${dest}`));
+
+      fs.symlinkSync(`${path.resolve(process.cwd(), 'media_src')}/images`, `${settings.options.destinationPath}/templates/${dest}/images`);
+    } else {
+      console.log(chalk.magenta(`Link already exists, skipping: ${r}`));
+    }
   }
 }

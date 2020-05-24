@@ -44,5 +44,9 @@
     "stylelint": "^13.2.1",
     "stylelint-config-recommended": "^3.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "install": "^0.13.0",
+    "naf-css": "git://github.com/dgrammatiko/naf-css.git#0.7",
+    "npm": "^6.14.5"
+  }
 }

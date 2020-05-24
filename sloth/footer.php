@@ -1,3 +1,7 @@
 <?php
 
-echo 'Footer works';
+echo
+      '</div>',
+    '</main>',
+  '</body>',
+'</html>';

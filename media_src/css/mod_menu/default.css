@@ -1,7 +1,7 @@
 nav {
   width: 100%;
   height: 5rem;
-  background-color: grey;
+  background-color: #f3f3f3;
   padding-right: 30px;
   display: flex;
   justify-content: center;
@@ -13,129 +13,35 @@ nav {
   flex-direction: column;
 }
 
-.nav-item a,
-.nav-item dark-light-switch {
+.nav-item a {
   display: inline-block;
   padding: 12px 15px;
   text-decoration: none;
 }
 
-.nav-item a:hover,
-.nav-item a:focus {
-  background-color: grey;
-  color: black;
-}
-
 body.overflow {
   overflow: hidden;
-}
-/*  BURGER
-========================================== */
-.burger {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  top: 0;
-  right: 20px;
-  border-radius: 4px;
-  z-index: 10;
-}
-.burger span {
-  position: relative;
-  margin-top: 9px;
-  margin-bottom: 9px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  top: 50%;
-  left: 50%;
-  margin-left: -15px;
-}
-.burger span, .burger span::before, .burger span::after {
-  display: block;
-  width: 30px;
-  height: 3px;
-  background-color: #000;
-  outline: 1px solid transparent;
-  -webkit-transition-property: background-color, -webkit-transform;
-  -moz-transition-property: background-color, -moz-transform;
-  -o-transition-property: background-color, -o-transform;
-  transition-property: background-color, transform;
-  -webkit-transition-duration: 0.3s;
-  -moz-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-.burger span::before, .burger span::after {
-  position: absolute;
-  content: "";
-}
-.burger span::before {
-  top: -9px;
-}
-.burger span::after {
-  top: 9px;
-}
-.burger.clicked span {
-  background-color: transparent;
-}
-.burger.clicked span::before {
-  -webkit-transform: translateY(9px) rotate(45deg);
-  -moz-transform: translateY(9px) rotate(45deg);
-  -ms-transform: translateY(9px) rotate(45deg);
-  -o-transform: translateY(9px) rotate(45deg);
-  transform: translateY(9px) rotate(45deg);
-}
-.burger.clicked span::after {
-  -webkit-transform: translateY(-9px) rotate(-45deg);
-  -moz-transform: translateY(-9px) rotate(-45deg);
-  -ms-transform: translateY(-9px) rotate(-45deg);
-  -o-transform: translateY(-9px) rotate(-45deg);
-  transform: translateY(-9px) rotate(-45deg);
-}
-.burger.clicked span:before, .burger.clicked span:after {
-  background-color: #fff;
-}
-.burger:hover {
-  cursor: pointer;
 }
 
 /*  NAV
 ========================================== */
 nav {
-  background-color: grey;
   position: fixed;
   z-index: 9;
   top: 0;
   right: 0;
   height: 100%;
-  max-width: 515px;
+  max-width: 400px;
   width: 100%;
   padding: 100px 40px 60px 40px;
   overflow-y: auto;
-  -webkit-transform: translateX(100%);
-  -moz-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  -o-transform: translateX(100%);
   transform: translateX(100%);
-  -webkit-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  -moz-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  -o-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 nav.show {
-  -webkit-transform: translateX(0px);
-  -moz-transform: translateX(0px);
-  -ms-transform: translateX(0px);
-  -o-transform: translateX(0px);
   transform: translateX(0px);
 }
 nav.show .nav-links li {
-  -webkit-transform: translateX(0px);
-  -moz-transform: translateX(0px);
-  -ms-transform: translateX(0px);
-  -o-transform: translateX(0px);
   transform: translateX(0px);
   opacity: 1;
 }
@@ -167,11 +73,6 @@ nav.show .nav-links li:nth-child(9) {
   transition-delay: 1.35s;
 }
 
-@media (min-width: 667px) {
-  nav {
-    padding: 120px 90px 70px 90px;
-  }
-}
 nav .nav-links {
   margin-top: 4.5rem;
   list-style-type: none;
@@ -179,23 +80,14 @@ nav .nav-links {
 
 nav .nav-links li {
   margin-bottom: 20px;
-  -webkit-transform: translateX(40px);
-  -moz-transform: translateX(40px);
-  -ms-transform: translateX(40px);
-  -o-transform: translateX(40px);
   transform: translateX(40px);
   opacity: 0;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 nav .nav-links li:last-of-type {
   margin-bottom: 0px;
 }
 nav .nav-links li a {
-  color: black;
-  font-family: "Raleway", sans-serif;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1.5rem;
@@ -203,16 +95,12 @@ nav .nav-links li a {
   letter-spacing: 5px;
   font-weight: 600;
   padding: 10px 0;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-nav .nav-links li a span {
-  color: grey;
-}
+
 nav .nav-links li a:hover {
-  color: lightgray;
+  padding-top: 1rem;
+  color: #f3f3f3;
 }
 
 /*  OVERLAY
@@ -224,9 +112,6 @@ nav .nav-links li a:hover {
   z-index: 1;
   width: 100%;
   height: 100%;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-color: var(--secondary-bg);
   opacity: 0;
