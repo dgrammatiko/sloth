@@ -3,6 +3,8 @@ defined('_JEXEC') || die;
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Plugin\PluginHelper;
+use Joomla\CMS\Router\Route;
+use Joomla\Component\Content\Site\Helper\RouteHelper;
 
 /** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 $wa = Factory::getDocument()->getWebAssetManager();
@@ -10,19 +12,6 @@ $wa->registerAndUseStyle('landing_css', 'com_landing/default.css', ['relative' =
 
 if (!count($this->items)) {
   return;
-}
-
-$firstImages = json_decode($this->items[0]->images);
-
-$image = '';
-
-if (!empty($firstImages->image_intro)) {
-  $image = '<img src="' . $firstImages->image_intro . '" alt="' . $firstImages->image_intro_alt .'" />';
-  if (PluginHelper::isEnabled('content', 'responsive')) {
-    JLoader::register('Ttc\Freebies\Responsive\Helper', JPATH_ROOT . '/plugins/content/responsive/helper.php', true);
-    $helper = new \Ttc\Freebies\Responsive\Helper;
-    $image = $helper->transformImage($image, [200, 320, 480, 768,]);
-  }
 }
 
 echo
@@ -48,10 +37,10 @@ for ($i = 0; $i < count($this->items); $i++) {
   }
   echo
   '<article>',
-    '<a href="' . $this->items[$i]->link . '" class="image">' . $image . '</a>',
+    '<a href="' . Route::_(RouteHelper::getArticleRoute($this->items[$i]->slug, $this->items[$i]->catid, $this->items[$i]->language)) . '" class="image">' . $image . '</a>',
     '<h3>' . $this->items[$i]->title . '</h3>',
     '<p>' . $this->items[$i]->introtext . '</p>',
-    '<a href="' . $this->items[$i]->link . '" class="button">More</a>',
+    '<a href="' . Route::_(RouteHelper::getArticleRoute($this->items[$i]->slug, $this->items[$i]->catid, $this->items[$i]->language)) . '" class="button">' . $this->items[$i]->title . '</a>',
   '</article>';
 }
 
