@@ -12,9 +12,8 @@ echo
 '<section>',
 '<header class="major">',
 	'<h2>' . $list[0]->title . '</h2>',
-'</header>';
-
-echo '<div class="posts">';
+'</header>',
+'<div class="posts">';
 
 for ($i = 0; $i < count($list); $i++) {
 	$firstImages = json_decode($list[$i]->images);
