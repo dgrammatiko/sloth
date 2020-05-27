@@ -15,6 +15,7 @@ class SlothstylesRenderer extends DocumentRenderer {
 	 * @since   __DEPLOY_VERSION__
 	 */
 	private $renderedSrc = [];
+	private $inlineData = [];
 
 	/**
 	 * Renders the document stylesheets and style tags and returns the results as a string
@@ -95,6 +96,14 @@ class SlothstylesRenderer extends DocumentRenderer {
 			}
 		}
 
+		if (count($this->inlineData)) {
+      $buffer .= '<style>';
+      foreach ($this->inlineData as $data) {
+        $buffer .= $data;
+      }
+      $buffer .= '</style>';
+    }
+
 		return $buffer;
 	}
 
@@ -143,12 +152,16 @@ class SlothstylesRenderer extends DocumentRenderer {
 		// Avoid double rel="", StyleSheet can have only rel="stylesheet"
 		unset($attribs['rel']);
 
-		// Render the element with attributes
-//		$buffer .= '<link href="' . htmlspecialchars($src) . '" rel="stylesheet"';
-//    $buffer .= $this->renderAttributes($attribs);
-//    $buffer .= ' />';
+		if ($attribs['inline']) {
+      $this->inlineData[] = file_get_contents(JPATH_ROOT . $src);
+    } else {
+      // Render the element with attributes
+      $buffer .= '<link href="' . htmlspecialchars($src) . '" rel="stylesheet"';
+      $buffer .= $this->renderAttributes($attribs);
+      $buffer .= ' />';
+    }
 
-    return '<style>' .  file_get_contents(JPATH_ROOT . $src). '</style>';
+    return $buffer;
 	}
 
 	/**

@@ -1,4 +1,4 @@
-#header {
+.header-top {
   align-items: center;
   border-bottom: 5px solid var(--primary);
   display: flex;
@@ -8,7 +8,7 @@
   padding: 0;
 }
 
-#header > .social {
+.header-top > .social {
   display: flex;
   list-style-type: none;
   margin: 0 0 0 auto;

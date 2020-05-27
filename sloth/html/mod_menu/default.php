@@ -6,7 +6,7 @@ use Joomla\CMS\Helper\ModuleHelper;
 /** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 $wa = $app->getDocument()->getWebAssetManager();
 $wa->registerAndUseScript('mod_menu_js', 'mod_menu/default.min.js', ['relative' => true, 'version' => '1.0.0'], ['defer' => true, 'type' => 'module']);
-$wa->registerAndUseStyle('mod_menu_css', 'templates/sloth/css/mod_menu/default.min.css', [], []);
+$wa->registerAndUseStyle('mod_menu_css', 'mod_menu/default.min.css', ['relative' => true, 'version' => '1.0.0'], ['inline' => true]);
 
 $id = '';
 

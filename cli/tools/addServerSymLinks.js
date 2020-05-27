@@ -37,7 +37,7 @@ module.exports.link = () => {
 
       fs.symlinkSync(`${path.resolve(process.cwd(), 'media_src')}/images`, `${settings.options.destinationPath}/templates/${dest}/images`);
     } else {
-      console.log(chalk.magenta(`Link already exists, skipping: ${r}`));
+      console.log(chalk.magenta(`Link already exists, skipping: /images`));
     }
   }
 }

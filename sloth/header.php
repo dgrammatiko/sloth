@@ -7,7 +7,7 @@ use Joomla\CMS\Factory;
 
 /** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 $wa = $this->getWebAssetManager();
-$wa->registerAndUseStyle('sloth_base_css', 'templates/sloth/css/base.min.css', [], []);
+$wa->registerAndUseStyle('sloth_base_css', 'templates/sloth/css/base.min.css', [], ['inline' => true]);
 
 $header    = $this->getBuffer('modules', 'header', $attribs = array());
 $component = $this->getBuffer('component');

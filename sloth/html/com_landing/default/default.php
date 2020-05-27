@@ -14,7 +14,7 @@ $document->setDescription('Sloth, an SPA/PWA template for Joomla 4. Also the fas
 
 /** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 $wa = Factory::getDocument()->getWebAssetManager();
-$wa->registerAndUseStyle('landing_css', 'com_landing/default.css', ['relative' => true, 'version' => 'auto'], []);
+$wa->registerAndUseStyle('landing_css', 'com_landing/default.css', ['relative' => true, 'version' => '1.0.0'], ['inline' => true]);
 
 
 // The actual page:
