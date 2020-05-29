@@ -24,14 +24,18 @@
   height: 2em;
 }
 
-/*  BURGER
-========================================== */
 .burger {
   border: 0;
   box-shadow: none;
   z-index: 10;
   height: auto;
   width: 2rem;
+}
+
+.burger:hover, .burger:focus {
+  background-color: transparent !important;
+  color: var(--primary) !important;
+  border: none !important;
 }
 
 .burger span {
@@ -86,8 +90,19 @@
   line-height: 0;
 }
 
-@media screen and (max-width: 422px) {
-  .burger {
-    margin-top: 1rem;
-  }
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--secondary-bg);
+  opacity: 0;
+  visibility: hidden;
+}
+.overlay.show {
+  opacity: 0.8;
+  visibility: visible;
 }

@@ -1,37 +1,3 @@
 @import "_variables";
 @import "naf-css/src/base";
-
-
-/* Button */
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-button,
-.button {
-  appearance: none;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  background-color: transparent;
-  border-radius: 0.375em;
-  border: 1px solid var(--primary);
-  color: var(--primary);
-  cursor: pointer;
-  display: inline-block;
-  font-family: inherit;
-  font-size: 0.8em;
-  font-weight: 700;
-  height: 3.5em;
-  letter-spacing: 0.075em;
-  line-height: 3.5em;
-  padding: 0 2.25em;
-  text-align: center;
-  text-decoration: none !important;
-  text-transform: uppercase;
-  white-space: nowrap; }
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-input[type="button"]:hover,
-button:hover,
-.button:hover {
-  border-color: var(--primary-dark);
-}
-
+@import "naf-css/src/forms/button.pcss";

@@ -1,4 +1,3 @@
-/* Section/Article */
 header p {
   font-size: 1em;
   font-weight: 400;
@@ -15,24 +14,22 @@ header.major > :last-child {
 header.main > :last-child {
   margin: 0 0 1em 0; }
 
-
-/* Box */
-.box {
-  border-radius: 0.375em;
-  border: solid 1px rgba(210, 215, 217, 0.75);
-  margin-bottom: 2em;
-  padding: 1.5em; }
-.box > :last-child,
-.box > :last-child > :last-child,
-.box > :last-child > :last-child > :last-child {
-  margin-bottom: 0; }
 .box.alt {
   border: 0;
   border-radius: 0;
   padding: 0; }
 
+.box > :last-child,
+.box > :last-child > :last-child,
+.box > :last-child > :last-child > :last-child {
+  margin-bottom: 0; }
 
-/* Image */
+.box {
+  border-radius: 0.375em;
+  border: solid 1px rgba(210, 215, 217, 0.75);
+  margin-bottom: 2em;
+  padding: 1.5em; }
+
 .image {
   border-radius: 0.375em;
   border: 0;
@@ -55,7 +52,6 @@ a.image img {
 a.image:hover img {
   transform: scale(1.075); }
 
-/* Features */
 .features {
   display: flex;
   flex-wrap: wrap;
@@ -101,7 +97,6 @@ a.image:hover img {
     align-items: flex-start; }
 }
 
-/* Posts */
 .posts {
   display: flex;
   flex-wrap: wrap;
@@ -197,13 +192,6 @@ a.image:hover img {
   .posts article:last-child:after {
     display: none; } }
 
-/* Wrapper */
-#wrapper {
-  display: flex;
-  flex-direction: row-reverse;
-  min-height: 100vh; }
-
-/* Main */
 main {
   flex-grow: 1;
   flex-shrink: 1;
@@ -233,8 +221,6 @@ main > .inner > section:first-of-type {
   main > .inner > section {
     padding: 3em 0 1em 0 ; } }
 
-
-/* Banner */
 .cols-2 {
   padding: 1em 0;
   display: flex; }
@@ -267,4 +253,3 @@ main > .inner > section:first-of-type {
     flex-grow: 0;
     flex-shrink: 0;
     width: 100%; } }
-
