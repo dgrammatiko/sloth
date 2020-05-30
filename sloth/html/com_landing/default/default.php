@@ -1,8 +1,6 @@
 <?php
 defined('_JEXEC') || die;
 
-use Joomla\CMS\HTML\HTMLHelper;
-use Joomla\CMS\Uri\Uri;
 use Joomla\CMS\Factory;
 
 $document = Factory::getDocument();
@@ -14,8 +12,7 @@ $document->setDescription('Sloth, an SPA/PWA template for Joomla 4. Also the fas
 
 /** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 $wa = Factory::getDocument()->getWebAssetManager();
-$wa->registerAndUseStyle('landing_css', 'com_landing/default.css', ['relative' => true, 'version' => '1.0.0'], ['inline' => true]);
-
+$wa->useStyle('com_landing.default');
 
 // The actual page:
 echo

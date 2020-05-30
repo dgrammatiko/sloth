@@ -8,8 +8,8 @@ use Joomla\Component\Content\Site\Helper\RouteHelper;
 
 /** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 $wa = Factory::getDocument()->getWebAssetManager();
-$wa->registerAndUseStyle('landing_css', 'com_landing/default.css', ['relative' => true, 'version' => '1.0.0'], ['inline' => true]);
-
+//$wa->registerAndUseStyle('landing_css', 'com_landing/default.css', ['relative' => true, 'version' => '1.0.0'], ['inline' => true]);
+$wa->useStyle('com_landing.default');
 if (!count($this->items)) {
   return;
 }

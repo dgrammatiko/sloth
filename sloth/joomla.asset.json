@@ -1,0 +1,64 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "assets": [
+    {
+      "name": "template.base",
+      "type": "style",
+      "uri": "base.min.css",
+      "version": "7284ddc26f59f3eb80126fb824515e71437f8371cc70627fa2a65cc46c9d8ed1",
+      "attributes": {
+        "inline": "true"
+      }
+    },
+    {
+      "name": "com_landing.default",
+      "type": "style",
+      "uri": "com_landing/default.min.css",
+      "version": "36652e8b577c039db29967802893602bb47e2f4bafff211d669a575bd22bfa2c",
+      "attributes": {
+        "inline": "true"
+      }
+    },
+    {
+      "name": "mod_custom.header",
+      "type": "style",
+      "uri": "mod_custom/header.min.css",
+      "version": "4bdbfc3931ad388be568a1f3d85d510cfb56550184837093948c89d849181bd6",
+      "attributes": {
+        "inline": "true"
+      }
+    },
+    {
+      "name": "mod_menu.default",
+      "type": "style",
+      "uri": "mod_menu/default.min.css",
+      "version": "f2edb16bbf30bdc6eccf7fc0f302995fb968712e92d8cd71d93c82b1307b0808",
+      "attributes": {
+        "inline": "true"
+      }
+    },
+    {
+      "name": "mod_footer.default",
+      "type": "style",
+      "uri": "mod_footer/default.min.css",
+      "version": "68fa7ccb5badf246521b9fbb900d6fc1b499695c5605231067114e4c66faa855",
+      "attributes": {
+        "inline": "true"
+      }
+    },
+    {
+      "name": "mod_menu.default",
+      "type": "script",
+      "uri": "mod_menu/default.min.js",
+      "version": "28ff114e33df677e8359448c278d17805b57251f54ec0fc1eb24a18b5baa880d",
+      "attributes": {
+        "type": "module",
+        "defer": "true"
+      }
+    }
+  ],
+  "description": "As slow as it gets",
+  "license": "GPL-3.0",
+  "name": "sloth",
+  "version": "1.0.0"
+}

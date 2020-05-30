@@ -19,16 +19,15 @@ module.exports.init = () => {
         } else {
           cmd += ` -b master`;
         }
-  
+
         cmd += ` ${c.repo} ${r.options.destinationPath}`;
-  
+
         console.log(chalk.green(`cloning: ${c.repo}, branch: ${c.branch || 'master'}`));
-  
+
         exec(`git clone ${cmd}`);
       }
     });
   } else {
     console.log(chalk.red('Joomla installation already exists, skipping clonning...'));
   }
-}
-
+};

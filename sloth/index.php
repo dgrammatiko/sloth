@@ -24,7 +24,8 @@ setcookie(
 );
 
 // Register the template assets
-$wa->registerAndUseStyle('sloth_base_css', 'base.min.css', ['relative' => true, 'version' => '1.0.0'], ['inline' => true]);
+//$wa->registerAndUseStyle('sloth_base_css', 'base.min.css', ['relative' => true, 'version' => '1.0.0'], ['inline' => true]);
+$wa->useStyle('template.base');
 
 // Get the output for all the template sections
 $component = $this->getBuffer('component');
@@ -46,7 +47,7 @@ echo
   '<body>',
     $header,
     '<main>',
-      '<div class="inner">',
+      '<div class="wrapper">',
         $component,
       '</div>',
     '</main>',

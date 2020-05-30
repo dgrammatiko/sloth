@@ -1,3 +1,18 @@
+/*.cols-2, .posts {*/
+/*  display: grid;*/
+/*  grid-gap: 2em;*/
+/*  grid-template-columns: repeat(auto-fit, minmax(calc(40vw - 5rem), 1fr));*/
+/*}*/
+
+/*@media screen and (max-width: 640px) {*/
+/*  .cols-2, .posts {*/
+/*    grid-template-columns: repeat(auto-fill, 100%);*/
+/*  }*/
+/*}*/
+/*.posts article {*/
+/*  max-width:320px*/
+/*}*/
+
 header p {
   font-size: 1em;
   font-weight: 400;
@@ -196,29 +211,29 @@ main {
   flex-grow: 1;
   flex-shrink: 1;
   width: 100%; }
-main > .inner {
+main > .wrapper {
   padding: 0 6em 0.1em 6em ;
   margin: auto auto;
   max-width: 110em; }
-main > .inner > section {
+main > .wrapper > section {
   padding: 6em 0 4em 0 ;
   border-top: solid 2px rgba(210, 215, 217, 0.75); }
-main > .inner > section:first-of-type {
+main > .wrapper > section:first-of-type {
   border-top: 0 !important; }
 @media screen and (max-width: 1680px) {
-  main > .inner {
+  main > .wrapper {
     padding: 0 5em 0.1em 5em ; }
-  main > .inner > section {
+  main > .wrapper > section {
     padding: 5em 0 3em 0 ; } }
 @media screen and (max-width: 1280px) {
-  main > .inner {
+  main > .wrapper {
     padding: 0 4em 0.1em 4em ; }
-  main > .inner > section {
+  main > .wrapper > section {
     padding: 4em 0 2em 0 ; } }
 @media screen and (max-width: 736px) {
-  main > .inner {
+  main > .wrapper {
     padding: 0 2em 0.1em 2em ; }
-  main > .inner > section {
+  main > .wrapper > section {
     padding: 3em 0 1em 0 ; } }
 
 .cols-2 {

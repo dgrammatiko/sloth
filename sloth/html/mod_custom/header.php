@@ -8,7 +8,7 @@ $renderer = Factory::getDocument()->loadRenderer('modules');
 
 /** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 $wa = Factory::getDocument()->getWebAssetManager();
-$wa->registerAndUseStyle('header_css', 'mod_custom/header.css', ['relative' => true, 'version' => '1.0.0'], ['inline' => true]);
+$wa->useStyle('mod_custom.header');
 
 // The actual page:
 echo
