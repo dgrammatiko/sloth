@@ -49,7 +49,9 @@
     "stylelint-config-recommended": "^3.0.0"
   },
   "dependencies": {
+    "@gfx/zopfli": "^1.0.14",
     "bonsai.css": "^1.0.0",
+    "iltorb": "^2.4.5",
     "install": "^0.13.0",
     "naf-css": "git://github.com/dgrammatiko/naf-css.git#0.7",
     "npm": "^6.14.5"

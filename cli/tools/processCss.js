@@ -5,6 +5,8 @@ const { yellow, magenta } = require('chalk');
 const { async: crawl } = require('fdir');
 const crypto = require('crypto');
 
+const { gzipFile } = require('./compress.js');
+
 const root = process.cwd();
 const settings = require(resolve(root, 'settings.json'));
 const dest = `${settings.options.template}`;
@@ -39,6 +41,8 @@ module.exports.css = (input) => {
               asset.version = sha256;
             }
           }
+
+          gzipFile(outputFile);
       });
 
       if (!existsSync(`${settings.options.destinationPath}/templates/${dest}/css`)
