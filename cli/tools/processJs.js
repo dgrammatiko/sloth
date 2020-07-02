@@ -18,6 +18,11 @@ module.exports.js = (input) => {
       return;
   }
 
+
+  if (!existsSync(resolve(process.cwd(), 'tmp'))) {
+    mkdirpSync(resolve(process.cwd(), 'tmp'));
+  }
+
   // input is Directory
   if (lstatSync(resolve(process.cwd(), input)).isDirectory()) {
     crawl(resolve(process.cwd(), input))
@@ -25,10 +30,6 @@ module.exports.js = (input) => {
           results.forEach(r => {
           if (!r.endsWith('.js')) {
             return;
-          }
-
-          if (!existsSync(resolve(process.cwd(), 'tmp'))) {
-            mkdirpSync(resolve(process.cwd(), 'tmp'));
           }
 
           const outputFile = r.replace('.js', '.min.js').replace('media_src', 'tmp');

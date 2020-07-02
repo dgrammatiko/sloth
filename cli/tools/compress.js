@@ -5,11 +5,11 @@
  */
 const {promisify} = require('util');
 
-const {createReadStream, readFile, writeFile, createWriteStream } = require('fs');
+const {createReadStream, readFile, readFileSync, writeFile, createWriteStream } = require('fs');
 const readFileP = promisify(readFile);
 const writeFileP = promisify(writeFile);
 const { gzip } = require('@gfx/zopfli');
-const { compressStream } = require('iltorb');
+const {createGzip, createBrotliCompress} = require('zlib');
 
 const options = {
   verbose: false,
@@ -28,25 +28,14 @@ const options = {
  */
 const gzipFile = (file) => {
     // eslint-disable-next-line no-console
-    console.log(`Processing: ${file}`);
+    console.log(`Compressing: ${file}`);
 
-    // Brotli file
-    createReadStream(file)
-      .pipe(compressStream())
-      .pipe(createWriteStream(file.replace(/\.js$/, '.js.br').replace(/\.css$/, '.css.br')));
+  const fileContents = createReadStream(file);
+  const writeStreamGz = createWriteStream(file.replace(/\.js$/, '.js.gz').replace(/\.css$/, '.css.gz'));
+  const writeStreamBr = createWriteStream(file.replace(/\.js$/, '.js.br').replace(/\.css$/, '.css.br'));
 
-    // Gzip the file
-  readFileP(file)
-    .then(data => gzip(data, options, (error, output) => {
-      if (error) throw err;
-      // Save the gzipped file
-      writeFileP(
-        file.replace(/\.js$/, '.js.gz').replace(/\.css$/, '.css.gz'),
-        output,
-        { encoding: 'utf8' },
-      );
-    }))
-    .catch(err => console.log(err));
+  fileContents.pipe(createGzip()).pipe(writeStreamGz);
+  fileContents.pipe(createBrotliCompress()).pipe(writeStreamBr);
 };
 
 module.exports.gzipFile = gzipFile;

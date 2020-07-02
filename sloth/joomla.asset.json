@@ -5,7 +5,7 @@
       "name": "template.base",
       "type": "style",
       "uri": "base.min.css",
-      "version": "7284ddc26f59f3eb80126fb824515e71437f8371cc70627fa2a65cc46c9d8ed1",
+      "version": "ec2e85b57ab9a6ed8be48f8ecfd3b1330086c6cf55051e27b6f61289377ab2f3",
       "attributes": {
         "inline": "true"
       }
@@ -23,7 +23,7 @@
       "name": "mod_custom.header",
       "type": "style",
       "uri": "mod_custom/header.min.css",
-      "version": "4bdbfc3931ad388be568a1f3d85d510cfb56550184837093948c89d849181bd6",
+      "version": "5dd5e4445f89dea6a40458b5d1a53e09795e0a519eb8d3dd8d15ced5b44d4f9f",
       "attributes": {
         "inline": "true"
       }
@@ -32,7 +32,7 @@
       "name": "mod_menu.default",
       "type": "style",
       "uri": "mod_menu/default.min.css",
-      "version": "f2edb16bbf30bdc6eccf7fc0f302995fb968712e92d8cd71d93c82b1307b0808",
+      "version": "1da388badd7b0990145f32c9c0a8b62db1f162aa4b159f1dbf3468fbe6a8e0d6",
       "attributes": {
         "inline": "true"
       }
@@ -50,7 +50,7 @@
       "name": "mod_menu.default",
       "type": "script",
       "uri": "mod_menu/default.min.js",
-      "version": "28ff114e33df677e8359448c278d17805b57251f54ec0fc1eb24a18b5baa880d",
+      "version": "f7180e6329b5e8325a5dc180f128ffe7edf11fe30106a16856e0b14197dc2ace",
       "attributes": {
         "type": "module",
         "defer": "true"

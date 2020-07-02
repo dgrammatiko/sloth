@@ -59,7 +59,7 @@ for ($i = 1; $i < count($list); $i++) {
   '<article class="cols-2">',
     '<span class="image" style="min-width: 210px">' . $image . '</span>',
     '<div class="content">',
-      '<h3><a role="button" href="' . $list[$i]->link . '">' . $list[$i]->title . '</a></h3>',
+      '<h3><a role="button" href="' . $list[$i]->link . '"  class="button">' . $list[$i]->title . '</a></h3>',
       '<p>' . $list[$i]->introtext . '</p>',
     '</div>',
   '</article>';

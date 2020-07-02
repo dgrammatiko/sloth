@@ -16,7 +16,12 @@ if ($tagId = $params->get('tag_id', ''))  {
 	$id = ' id="' . $tagId . '"';
 }
 
-echo '<nav class="navbar main">',
+echo
+
+'<nav class="navbar main" style="display: none">',
+'<button type="button" class="navClose">',
+'<span aria-hidden="true">X</span> Close',
+'</button>',
 '<ul class="nav-links">';
 
 foreach ($list as $i => &$item)  {

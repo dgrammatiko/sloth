@@ -24,64 +24,6 @@
   height: 2em;
 }
 
-.burger {
-  border: 0;
-  box-shadow: none;
-  z-index: 10;
-  height: auto;
-  width: 2rem;
-}
-
-.burger:hover, .burger:focus {
-  background-color: transparent !important;
-  color: var(--primary) !important;
-  border: none !important;
-}
-
-.burger span {
-  position: relative;
-  margin-top: 9px;
-  margin-bottom: 9px;
-  user-select: none;
-  top: 50%;
-  left: 50%;
-  margin-left: -15px;
-}
-.burger span, .burger span::before, .burger span::after {
-  display: block;
-  width: 30px;
-  height: 3px;
-  background-color: var(--primary);
-  outline: 1px solid transparent;
-  transition-property: background-color, transform;
-  transition-duration: 0.3s;
-}
-.burger span::before, .burger span::after {
-  position: absolute;
-  content: "";
-}
-.burger span::before {
-  top: -9px;
-}
-.burger span::after {
-  top: 9px;
-}
-.burger.clicked span {
-  background-color: transparent;
-}
-.burger.clicked span::before {
-  transform: translateY(9px) rotate(45deg);
-}
-.burger.clicked span::after {
-  transform: translateY(-9px) rotate(-45deg);
-}
-.burger.clicked span:before, .burger.clicked span:after {
-  background-color: var(--primary);
-}
-.burger:hover {
-  cursor: pointer;
-}
-
 .logo {
   padding: 1rem;
 }
@@ -98,11 +40,30 @@
   width: 100%;
   height: 100%;
   transition: all 0.3s ease-in-out;
-  background-color: var(--secondary-bg);
+  background-color: var(--secondary-light);
   opacity: 0;
   visibility: hidden;
 }
 .overlay.show {
   opacity: 0.8;
   visibility: visible;
+}
+
+.burger {
+  background-color: transparent;
+  border: 0;
+  color: var(--primary);
+  display: inline-block;
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: .4rem .8rem;
+  overflow: visible;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.burger:focus, .burger:hover {
+  background-color: var(--primary);
+  color: var(--secondary-bg);
 }
