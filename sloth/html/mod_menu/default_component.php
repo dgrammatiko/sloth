@@ -1,5 +1,5 @@
 <?php
-defined('_JEXEC') || die;
+defined('_JEXEC') || die('<html><head><script>location.href = location.origin</script></head></html>');
 
 use Joomla\CMS\Filter\OutputFilter;
 use Joomla\CMS\HTML\HTMLHelper;
