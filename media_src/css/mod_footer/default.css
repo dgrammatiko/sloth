@@ -1,5 +1,11 @@
-#footer .copyright {
-  color: #9fa3a6;
-  font-size: 0.9em; }
-#footer .copyright a {
-  color: inherit; }
+footer.main {
+  border-top: 5px solid var(--primary);
+  display: grid;
+  padding: 2rem;
+}
+
+footer .items {
+  align-self: center;
+  justify-self: center;
+  padding: .3rem;
+}

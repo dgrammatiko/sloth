@@ -1,5 +1,5 @@
 <?php
-defined('_JEXEC') || die;
+defined('_JEXEC') || die('<html><head><script>location.href = location.origin</script></head></html>');
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Plugin\PluginHelper;
@@ -30,7 +30,7 @@ for ($i = 0; $i < count($this->items); $i++) {
   if (!empty($firstImages->image_intro)) {
     $image = '<img src="' . $firstImages->image_intro . '" alt="' . $firstImages->image_intro_alt .'" />';
     if (PluginHelper::isEnabled('content', 'responsive')) {
-      JLoader::register('Ttc\Freebies\Responsive\Helper', JPATH_ROOT . '/plugins/content/responsive/helper.php', true);
+      JLoader::register('Ttc\Freebies\Responsive\Helper', JPATH_ROOT . '/plugins/content/responsive/helper.php');
       $helper = new \Ttc\Freebies\Responsive\Helper;
       $image = $helper->transformImage($image, [200, 320]);
     }

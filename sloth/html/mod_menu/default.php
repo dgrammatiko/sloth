@@ -1,5 +1,5 @@
 <?php
-defined('_JEXEC') || die;
+defined('_JEXEC') || die('<html><head><script>location.href = location.origin</script></head></html>');
 
 use Joomla\CMS\Helper\ModuleHelper;
 
@@ -10,19 +10,17 @@ $wa = $app->getDocument()->getWebAssetManager();
 
 $wa->useScript('mod_menu.default');
 $wa->useStyle('mod_menu.default');
-$id = '';
 
-if ($tagId = $params->get('tag_id', ''))  {
-	$id = ' id="' . $tagId . '"';
-}
+$tagId = $params->get('tag_id', '');
+$id = empty($tagId) ? '' : ' id="' . $tagId . '"';
 
 echo
 
 '<nav class="navbar main" style="display: none">',
-'<button type="button" class="navClose">',
-'<span aria-hidden="true">X</span> Close',
-'</button>',
-'<ul class="nav-links">';
+  '<button type="button" class="navClose">',
+  'Close  <span aria-hidden="true" style="font-size: 1.2rem">ⓧ</span>',
+  '</button>',
+  '<ul class="nav-links">';
 
 foreach ($list as $i => &$item)  {
 	$itemParams = $item->getParams();

@@ -1,5 +1,5 @@
 <?php
-defined('_JEXEC') || die;
+defined('_JEXEC') || die('<html><head><script>location.href = location.origin</script></head></html>');
 
 $images = json_decode($this->item->images);
 $image = '';
@@ -7,7 +7,7 @@ $image = '';
 if (!empty($images->image_intro)) {
   $image = '<img src="' . $images->image_intro . '" alt="' . $images->image_intro_alt .'" style="width: 100% !important;"/>';
   if (\Joomla\CMS\Plugin\PluginHelper::isEnabled('content', 'responsive')) {
-    JLoader::register('Ttc\Freebies\Responsive\Helper', JPATH_ROOT . '/plugins/content/responsive/helper.php', true);
+    JLoader::register('Ttc\Freebies\Responsive\Helper', JPATH_ROOT . '/plugins/content/responsive/helper.php');
     $helper = new \Ttc\Freebies\Responsive\Helper;
     // 200, 320, 480, 768, 992, 1200, 1600, 1920
     $image = $helper->transformImage($image, [200, 320, 480, 768, 992, 1200, 1600, 1920]);
