@@ -26,7 +26,7 @@ echo
     '<header>',
       '<h1>' . $list[0]->title . '</h1>',
     '</header>',
-    '<p>' . $list[0]->introtext . '</p>',
+    $list[0]->introtext,
     '<a href="' . $list[0]->link . '" class="button">' . $list[0]->title . '</a>',
   '</div>',
   '<span class="image object">',
@@ -60,7 +60,7 @@ for ($i = 1; $i < count($list); $i++) {
     '<span class="image" style="min-width: 210px">' . $image . '</span>',
     '<div class="content">',
       '<h3><a role="button" href="' . $list[$i]->link . '"  class="button">' . $list[$i]->title . '</a></h3>',
-      '<p>' . $list[$i]->introtext . '</p>',
+      $list[$i]->introtext,
     '</div>',
   '</article>';
 }

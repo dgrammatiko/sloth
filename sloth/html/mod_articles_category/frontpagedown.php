@@ -32,7 +32,7 @@ for ($i = 0; $i < count($list); $i++) {
 	'<article>',
 		'<a href="' . $list[$i]->link . '" title="' . $list[$i]->title . '" class="image">' . $image . '</a>',
 		'<h3>' . $list[$i]->title . '</h3>',
-		'<p>' . $list[$i]->introtext . '</p>',
+		$list[$i]->introtext,
 		'<a href="' . $list[$i]->link . '" title="' . $list[$i]->title . '" class="button">' . $list[$i]->title . '</a>',
 	'</article>';
 }

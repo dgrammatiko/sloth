@@ -39,7 +39,7 @@ for ($i = 0; $i < count($this->items); $i++) {
   '<article>',
     '<a href="' . Route::_(RouteHelper::getArticleRoute($this->items[$i]->slug, $this->items[$i]->catid, $this->items[$i]->language)) . '" class="image">' . $image . '</a>',
     '<h3>' . $this->items[$i]->title . '</h3>',
-    '<p>' . $this->items[$i]->introtext . '</p>',
+    $this->items[$i]->introtext,
     '<a href="' . Route::_(RouteHelper::getArticleRoute($this->items[$i]->slug, $this->items[$i]->catid, $this->items[$i]->language)) . '" class="button">' . $this->items[$i]->title . '</a>',
   '</article>';
 }
