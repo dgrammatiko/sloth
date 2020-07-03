@@ -153,7 +153,7 @@ class SlothstylesRenderer extends DocumentRenderer {
 		unset($attribs['rel']);
 
 		if ($attribs['inline']) {
-      $this->inlineData[] = file_get_contents(JPATH_ROOT . $src);
+      $this->inlineData[] = @file_get_contents(JPATH_ROOT . $src);
     } else {
       // Render the element with attributes
       $buffer .= '<link href="' . htmlspecialchars($src) . '" rel="stylesheet"';
