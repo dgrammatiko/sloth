@@ -49,7 +49,7 @@ function createPageStream(request) {
           }
           // the body url is the request url plus 'include'
           const url = new URL(request.url);
-          url.searchParams.set('i', 'i'); // Adds ?i=i or &i=i, which is our indicator for "internal" partial page
+          url.searchParams.set('tmpl', 'cmpt'); // Adds ?tmpl=cmpt or &tmpl=cmpt, which is our indicator for "internal" partial page
           const startFetch = Promise.resolve(cachedShellTop);
           const endFetch = Promise.resolve(cachedShellBottom);
           const middleFetch = fetch(url).then(response => {
@@ -96,7 +96,7 @@ self.addEventListener('fetch', event => {
   if (url.origin === location.origin) {
     if (event.clientId === "" && // Not fetched via AJAX after page load.
       event.request.method == "GET" && // Don't fetch on POST, DELETE, etc.
-      !url.href.includes('i=i') && // Parameter representing "internal" navigation.
+      !url.href.includes('tmpl=cmpt') && // Parameter representing "internal" navigation.
       !url.href.includes('.css') && // Don't run on CSS.
       !url.href.includes('.js') && // Don't run on JS.
       !url.href.includes('/administrator') && // Don't fetch for administrate dashboard.

@@ -35,6 +35,18 @@ $metas     = $this->getBuffer('Slothmetas');
 $styles    = $this->getBuffer('Slothstyles');
 $scripts   = $this->getBuffer('Slothscripts');
 
+$sw =
+<<<JS
+if ("serviceWorker" in navigator) { 
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.min.js")
+    .then(() => {}, function(err) { 
+      console.warn('ServiceWorker registration failed: ', err); 
+    });
+  });
+}
+JS;
+
 // Render the page
 echo
 '<!doctype html>',
@@ -52,5 +64,6 @@ echo
       '</div>',
     '</main>',
     $footer,
+    '<script type="module">' . $sw . '</script>',
   '</body>',
 '</html>';

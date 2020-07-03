@@ -9,7 +9,8 @@ use Joomla\CMS\Factory;
 $wa = $this->getWebAssetManager();
 $wa->registerAndUseStyle('sloth_base_css', 'templates/sloth/css/base.min.css', [], ['inline' => true]);
 
-$header    = $this->getBuffer('modules', 'header', $attribs = array());
+$header    = $this->getBuffer('modules', 'header', []);
+$footer    = $this->getBuffer('modules', 'footer', []);
 $component = $this->getBuffer('component');
 
 $metas     = $this->getBuffer('metas');
@@ -35,4 +36,4 @@ echo
   '<body>',
     $header,
     '<main>',
-      '<div class="inner">';
+      '<div class="wrapper">';

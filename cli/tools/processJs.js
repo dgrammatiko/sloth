@@ -33,7 +33,7 @@ module.exports.js = (input) => {
           }
 
           const outputFile = r.replace('.js', '.min.js').replace('media_src', 'tmp');
-          execSync(`npx rollup ${r} -o ${outputFile}`);
+          execSync(`npx rollup --config rollup.config.js ${r} -o ${outputFile}`);
 
           for(let asset of assets.assets) {
             if (asset.uri === outputFile.replace(`${process.cwd()}/tmp/js/`, '')) {
@@ -45,7 +45,10 @@ module.exports.js = (input) => {
             }
           }
 
-          gzipFile(outputFile);
+          if (!r.endsWith('sw.js')) {
+            gzipFile(outputFile);
+          }
+
       });
 
       if (!existsSync(`${settings.options.destinationPath}/templates/${dest}/js`)

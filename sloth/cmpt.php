@@ -3,10 +3,13 @@ defined('_JEXEC') || die('<html><head><script>location.href = location.origin</s
 
 use Joomla\CMS\Factory;
 
-$component = $this->getBuffer('component');
-$app = Factory::getApplication();
-$title = htmlspecialchars($this->_doc->getTitle(), ENT_COMPAT, 'UTF-8');
-$description = htmlspecialchars($this->_doc->getDescription(), ENT_COMPAT, 'UTF-8');
+/** @var Joomla\CMS\Document\HtmlDocument $this */
+
+$component   = $this->getBuffer('component');
+$app         = Factory::getApplication();
+$title       = htmlspecialchars($this->title, ENT_COMPAT, 'UTF-8');
+$description = htmlspecialchars($this->description, ENT_COMPAT, 'UTF-8');
+
 setcookie(
   Factory::getSession()->getName(),
   '',
@@ -14,7 +17,7 @@ setcookie(
   $app->get('cookie_domain')
 );
 
-echo $component . '</script>' .
+echo $component . '<script>' .
   'document.title="' . $title . '";'.
   /**
    * The following line is totally useless as the description is only used by machines/bots...

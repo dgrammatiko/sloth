@@ -50,7 +50,7 @@
       "name": "mod_menu.default",
       "type": "script",
       "uri": "mod_menu/default.min.js",
-      "version": "f7180e6329b5e8325a5dc180f128ffe7edf11fe30106a16856e0b14197dc2ace",
+      "version": "0cac65959f27a13f2a64747cec2cfefa98db18a5641d0d277852f6178e06f5c5",
       "attributes": {
         "type": "module",
         "defer": "true"

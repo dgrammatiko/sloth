@@ -4,5 +4,6 @@ defined('_JEXEC') || die('<html><head><script>location.href = location.origin</s
 echo
       '</div>',
     '</main>',
+    $this->getBuffer('modules', 'footer', []),
   '</body>',
 '</html>';
