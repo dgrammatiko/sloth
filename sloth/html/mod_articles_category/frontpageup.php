@@ -16,7 +16,7 @@ if (!empty($firstImages->image_intro)) {
 	if (PluginHelper::isEnabled('content', 'responsive')) {
 		JLoader::register('Ttc\Freebies\Responsive\Helper', JPATH_ROOT . '/plugins/content/responsive/helper.php');
 		$helper = new \Ttc\Freebies\Responsive\Helper;
-		$image = $helper->transformImage($image, [200, 320, 480, 768,]);
+		$image = $helper->transformImage($image, [200, 320, 480]);
 	}
 }
 
@@ -50,7 +50,7 @@ for ($i = 1; $i < count($list); $i++) {
     if (PluginHelper::isEnabled('content', 'responsive')) {
       JLoader::register('Ttc\Freebies\Responsive\Helper', JPATH_ROOT . '/plugins/content/responsive/helper.php', true);
       $helper = new \Ttc\Freebies\Responsive\Helper;
-      $image = $helper->transformImage($image, [200, 320, 480, 640, 700]);
+      $image = $helper->transformImage($image, [200, 320, 480]);
     }
   }
 

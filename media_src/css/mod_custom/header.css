@@ -20,6 +20,8 @@
 }
 
 .social-icon {
+  min-width: 48px;
+  min-height: 48px;
   width: 2em;
   height: 2em;
 }
@@ -56,7 +58,7 @@
   display: inline-block;
   font-size: 1.2rem;
   line-height: 1;
-  padding: .4rem .8rem;
+  padding: .6rem .6rem;
   overflow: visible;
   text-align: center;
   text-decoration: none;

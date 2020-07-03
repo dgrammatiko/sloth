@@ -90,7 +90,7 @@ class SlothmetasRenderer extends DocumentRenderer {
 		$buffer .= '<title>' . htmlspecialchars($this->_doc->getTitle(), ENT_COMPAT, 'UTF-8') . '</title>';
     $buffer .= '<meta name="viewport" content="width=device-width,minimum-scale=1">';
     $buffer .= '<meta name="theme-color" content="#fff">';
-    $buffer .= '<link rel="manifest" href="/media/tmpl_' . $this->_doc->template . '/site.json">';
+    $buffer .= '<link rel="manifest" href="/templates/' . $this->_doc->template . '/site.json">';
     $buffer .= '<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/templates/' . $this->_doc->template . '/images/apple-touch-icon.png">';
     $buffer .= '<link rel="icon" type="image/png" sizes="32x32" href="/templates/' . $this->_doc->template . '/images/favicon-32x32.png">';
     $buffer .= '<link rel="icon" type="image/png" sizes="16x16" href="/templates/' . $this->_doc->template . '/images/favicon-16x16.png">';

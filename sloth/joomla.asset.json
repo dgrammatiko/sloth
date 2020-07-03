@@ -14,7 +14,7 @@
       "name": "com_landing.default",
       "type": "style",
       "uri": "com_landing/default.min.css",
-      "version": "36652e8b577c039db29967802893602bb47e2f4bafff211d669a575bd22bfa2c",
+      "version": "21921a958d18d4631a4b632786b1495920165bcdd975cf97826394592b9b9965",
       "attributes": {
         "inline": "true"
       }
@@ -23,7 +23,7 @@
       "name": "mod_custom.header",
       "type": "style",
       "uri": "mod_custom/header.min.css",
-      "version": "5dd5e4445f89dea6a40458b5d1a53e09795e0a519eb8d3dd8d15ced5b44d4f9f",
+      "version": "b0e7ab5c2cea8c74ff3722892c424f65a462f322104a8c933f069b83edcf67ba",
       "attributes": {
         "inline": "true"
       }
