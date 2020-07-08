@@ -1,22 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="4.0" type="template" client="site">
   <name>sloth</name>
-  <version>0.0.1</version>
+  <version>1.0.0</version>
   <creationDate>19/03/2020</creationDate>
   <author>Dimitris Grammatikogiannis</author>
   <authorEmail>d.grammatiko@gmail.com</authorEmail>
   <copyright>Copyright (C) 2020 Dimitris Grammatikogiannis. All rights reserved.</copyright>
   <description>Another (hopefully not slothy) template</description>
+  <scriptfile>script.php</scriptfile>
   <files>
     <filename>index.php</filename>
+    <filename>400.php</filename>
+    <filename>500.php</filename>
+    <filename>cmpt.php</filename>
+    <filename>footer.php</filename>
+    <filename>header.php</filename>
+    <filename>nonet.php</filename>
+    <filename>site.json</filename>
+    <filename>joomla.asset.json</filename>
     <filename>templateDetails.xml</filename>
     <filename>template_preview.png</filename>
     <filename>template_thumbnail.png</filename>
   </files>
   <media folder="media" destination="templates/site/sloth">
+    <folder>helper</folder>
     <folder>css</folder>
     <folder>js</folder>
-    <folder>fonts</folder>
+    <folder>html</folder>
     <folder>images</folder>
   </media>
   <positions>

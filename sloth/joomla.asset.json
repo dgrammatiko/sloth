@@ -5,7 +5,16 @@
       "name": "template.base",
       "type": "style",
       "uri": "base.min.css",
-      "version": "ec2e85b57ab9a6ed8be48f8ecfd3b1330086c6cf55051e27b6f61289377ab2f3",
+      "version": "62b8d480c9526a976129d2a4ed6268bd031350d19390ecb8b7783dbb9749ea9d",
+      "attributes": {
+        "inline": "true"
+      }
+    },
+    {
+      "name": "com_content.category_blog",
+      "type": "style",
+      "uri": "com_content/category_blog.min.css",
+      "version": "6ab669e5dc7aa005266794a6be29ad64c38233b27d723c15745bf10611951555",
       "attributes": {
         "inline": "true"
       }
@@ -14,7 +23,7 @@
       "name": "com_landing.default",
       "type": "style",
       "uri": "com_landing/default.min.css",
-      "version": "21921a958d18d4631a4b632786b1495920165bcdd975cf97826394592b9b9965",
+      "version": "6dccf5334dd8a3546af7b5653bfdef6767dabd8b936247a101c53b16c77749f9",
       "attributes": {
         "inline": "true"
       }
@@ -32,7 +41,7 @@
       "name": "mod_menu.default",
       "type": "style",
       "uri": "mod_menu/default.min.css",
-      "version": "1da388badd7b0990145f32c9c0a8b62db1f162aa4b159f1dbf3468fbe6a8e0d6",
+      "version": "6253fa1124d7e6c78409ef3c3ad0639d8e96976e780b37c40194a66f636ddf6c",
       "attributes": {
         "inline": "true"
       }

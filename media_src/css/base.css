@@ -10,3 +10,8 @@ a:focus, a:hover {
 .button {
   text-decoration: none !important;
 }
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}

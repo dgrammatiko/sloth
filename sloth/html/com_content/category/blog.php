@@ -9,16 +9,22 @@ use Joomla\Component\Content\Site\Helper\RouteHelper;
 /** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 $wa = Factory::getDocument()->getWebAssetManager();
 //$wa->registerAndUseStyle('landing_css', 'com_landing/default.css', ['relative' => true, 'version' => '1.0.0'], ['inline' => true]);
-$wa->useStyle('com_landing.default');
+$wa->useStyle('com_content.category_blog');
+
 if (!count($this->items)) {
   return;
+}
+
+$hasResponsiveImages = PluginHelper::isEnabled('content', 'responsive');
+if ($hasResponsiveImages) {
+  JLoader::register('Ttc\Freebies\Responsive\Helper', JPATH_ROOT . '/plugins/content/responsive/helper.php');
 }
 
 echo
 
 '<section>',
 '<header class="major">',
-  '<h2>' . $this->category->title . '</h2>',
+  '<h2 class="g-center">' . $this->category->title . '</h2>',
 '</header>';
 
 echo '<div class="posts">';
@@ -29,10 +35,8 @@ for ($i = 0; $i < count($this->items); $i++) {
 
   if (!empty($firstImages->image_intro)) {
     $image = '<img src="' . $firstImages->image_intro . '" alt="' . $firstImages->image_intro_alt .'" />';
-    if (PluginHelper::isEnabled('content', 'responsive')) {
-      JLoader::register('Ttc\Freebies\Responsive\Helper', JPATH_ROOT . '/plugins/content/responsive/helper.php');
-      $helper = new \Ttc\Freebies\Responsive\Helper;
-      $image = $helper->transformImage($image, [200, 320]);
+    if ($hasResponsiveImages) {
+      $image = (new \Ttc\Freebies\Responsive\Helper)->transformImage($image, [200, 320]);
     }
   }
   echo

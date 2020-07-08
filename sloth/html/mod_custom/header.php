@@ -28,7 +28,7 @@ echo
 
     '</div>',
 
-	  $renderer->render('menu', array('style' => 'raw', 'layout' => 'header'), null),
+    $renderer->render('menu', array('style' => 'raw', 'layout' => 'header'), null),
 
     '<div class="overlay"></div>',
 '</header>';

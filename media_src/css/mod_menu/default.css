@@ -1,10 +1,18 @@
 nav {
   width: 100%;
-  height: 5rem;
+  height: 100%;
   background-color: var(--secondary-lighter);
-  padding-right: 30px;
   display: flex;
   justify-content: center;
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  right: 0;
+  max-width: 400px;
+  padding: 100px 40px 60px 40px;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
 .nav-links {
@@ -23,19 +31,6 @@ body.overflow {
   overflow: hidden;
 }
 
-nav {
-  position: fixed;
-  z-index: 9;
-  top: 0;
-  right: 0;
-  height: 100%;
-  max-width: 400px;
-  width: 100%;
-  padding: 100px 40px 60px 40px;
-  overflow-y: auto;
-  transform: translateX(100%);
-  transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-}
 nav.show {
   transform: translateX(0px);
 }

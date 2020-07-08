@@ -4,7 +4,12 @@ defined('_JEXEC') || die('<html><head><script>location.href = location.origin</s
 use Joomla\CMS\Plugin\PluginHelper;
 
 if (!$list) {
-	return;
+  return;
+}
+
+$hasResponsiveImages = PluginHelper::isEnabled('content', 'responsive');
+if ($hasResponsiveImages) {
+  JLoader::register('Ttc\Freebies\Responsive\Helper', JPATH_ROOT . '/plugins/content/responsive/helper.php');
 }
 
 $firstImages = json_decode($list[0]->images);
@@ -12,12 +17,10 @@ $firstImages = json_decode($list[0]->images);
 $image = '';
 
 if (!empty($firstImages->image_intro)) {
-	$image = '<img src="' . $firstImages->image_intro . '" alt="' . $firstImages->image_intro_alt .'" />';
-	if (PluginHelper::isEnabled('content', 'responsive')) {
-		JLoader::register('Ttc\Freebies\Responsive\Helper', JPATH_ROOT . '/plugins/content/responsive/helper.php');
-		$helper = new \Ttc\Freebies\Responsive\Helper;
-		$image = $helper->transformImage($image, [200, 320, 480]);
-	}
+  $image = '<img src="' . $firstImages->image_intro . '" alt="' . $firstImages->image_intro_alt .'" />';
+  if ($hasResponsiveImages) {
+    $image = (new \Ttc\Freebies\Responsive\Helper)->transformImage($image, [200, 320, 480]);
+  }
 }
 
 echo
@@ -26,7 +29,7 @@ echo
     '<header>',
       '<h1>' . $list[0]->title . '</h1>',
     '</header>',
-    $list[0]->introtext,
+    '<p>' . $list[0]->introtext . '</p>',
     '<a href="' . $list[0]->link . '" class="button">' . $list[0]->title . '</a>',
   '</div>',
   '<span class="image object">',
@@ -36,30 +39,28 @@ echo
 
 echo
 '<section>',
-	'<header class="major">',
-		'<h2>' . $list[0]->category_title . '</h2>',
-	'</header>',
-	'<div class="features">';
+  '<header class="g-center">',
+    '<h2>' . $list[0]->category_title . '</h2>',
+  '</header>',
+  '<div class="cols-2">';
 
 for ($i = 1; $i < count($list); $i++) {
   $firstImages = json_decode($list[$i]->images);
   $image = '';
 
   if (!empty($firstImages->image_intro)) {
-    $image = '<img src="' . $firstImages->image_intro . '" alt="' . $firstImages->image_intro_alt .'" style="width: 200px; height: 200px; clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"/>';
-    if (PluginHelper::isEnabled('content', 'responsive')) {
-      JLoader::register('Ttc\Freebies\Responsive\Helper', JPATH_ROOT . '/plugins/content/responsive/helper.php', true);
-      $helper = new \Ttc\Freebies\Responsive\Helper;
-      $image = $helper->transformImage($image, [200, 320, 480]);
+    $image = '<img src="' . $firstImages->image_intro . '" alt="' . $firstImages->image_intro_alt .'" />';
+    if ($hasResponsiveImages) {
+      $image = (new \Ttc\Freebies\Responsive\Helper)->transformImage($image, [200, 320, 480]);
     }
   }
 
 
   echo
-  '<article class="cols-2">',
-    '<span class="image" style="min-width: 210px">' . $image . '</span>',
+  '<article class="features">',
+    '<span class="image">' . $image . '</span>',
     '<div class="content">',
-      '<h3><a role="button" href="' . $list[$i]->link . '"  class="button">' . $list[$i]->title . '</a></h3>',
+      '<h3><a href="' . $list[$i]->link . '">' . $list[$i]->title . '</a></h3>',
       $list[$i]->introtext,
     '</div>',
   '</article>';

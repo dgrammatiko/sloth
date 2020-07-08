@@ -10,10 +10,6 @@ $wa->useStyle('mod_footer.default');
 
 echo
 '<footer class="main">',
-	'<div class="items">Sloth is a free joomla4  PWA template</div>',
+  '<div class="items">Sloth is a free joomla4  PWA template</div>',
   '<div class="items">Copyright Ⓒ' . date("Y") . '  <a href="httsp://dgrammatiko.online">D. Grammatikogiannis</a></div>',
 '</footer>';
-
-
-
-

@@ -12,9 +12,11 @@ $document->setDescription('Sloth, an SPA/PWA template for Joomla 4. Also the fas
 
 /** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 $wa = Factory::getDocument()->getWebAssetManager();
+
+$wa->useStyle('com_content.category_blog');
 $wa->useStyle('com_landing.default');
 
 // The actual page:
 echo
-    $renderer->render('frontpageup', array('style' => 'raw'), null),
-    $renderer->render('frontpagedown', array('style' => 'raw'), null);
+    $renderer->render('frontpageup', ['style' => 'raw'], null),
+    $renderer->render('frontpagedown', ['style' => 'raw'], null);
