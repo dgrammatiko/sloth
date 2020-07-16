@@ -7,7 +7,7 @@ use Joomla\CMS\Factory;
 /**
  * Installation class to perform additional changes during install/uninstall/update
  */
-class SlothInstallerScript extends \Joomla\CMS\Installer\InstallerScript {
+class SlothInstallerScript extends TemplateAdapter {
   /**
    * Constructor
    *
