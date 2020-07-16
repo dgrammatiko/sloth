@@ -32,7 +32,7 @@
       "name": "mod_custom.header",
       "type": "style",
       "uri": "mod_custom/header.min.css",
-      "version": "b0e7ab5c2cea8c74ff3722892c424f65a462f322104a8c933f069b83edcf67ba",
+      "version": "ace6f57b22b0edd193467c00dcb54500c246cb3d344313a1a89918f0a32c5421",
       "attributes": {
         "inline": "true"
       }

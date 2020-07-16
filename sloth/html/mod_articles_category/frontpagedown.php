@@ -34,7 +34,7 @@ for ($i = 0; $i < count($list); $i++) {
   echo
   '<article class="box">',
     '<a href="' . $list[$i]->link . '" title="' . $list[$i]->title . '" class="image">' . $image . '</a>',
-    '<a href="' . $list[$i]->link . '" title="' . $list[$i]->title . '" class="image">' .  '<h3>' . $list[$i]->title . '</h3>' . '</a>',
+    '<h3><a href="' . $list[$i]->link . '" title="' . $list[$i]->title . '" class="image">' . $list[$i]->title  . '</a></h3>',
     $list[$i]->introtext,
 //    '<a href="' . $list[$i]->link . '" title="' . $list[$i]->title . '">' . $list[$i]->title . '</a>',
   '</article>';
