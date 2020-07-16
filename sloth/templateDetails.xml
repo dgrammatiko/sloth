@@ -23,6 +23,7 @@
     <filename>template_thumbnail.png</filename>
     <folder>css</folder>
     <folder>js</folder>
+    <folder>html</folder>
     <folder>helper</folder>
     <folder>images</folder>
   </files>
@@ -31,8 +32,8 @@
     <position>debug</position>
     <position>footer</position>
   </positions>
-  <languages folder="language">
-    <language tag="en-GB">en-GB/tpl_sloth.ini</language>
-    <language tag="en-GB">en-GB/tpl_sloth.sys.ini</language>
-  </languages>
+<!--  <languages folder="language">-->
+<!--    <language tag="en-GB">en-GB/tpl_sloth.ini</language>-->
+<!--    <language tag="en-GB">en-GB/tpl_sloth.sys.ini</language>-->
+<!--  </languages>-->
 </extension>
