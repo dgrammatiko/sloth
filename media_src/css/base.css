@@ -1,8 +1,9 @@
-@import "_variables";
-@import "naf-css/src/base";
-@import "naf-css/src/forms/button.pcss";
+@import '_variables';
+@import 'naf-css/src/base';
+@import 'naf-css/src/forms/button.pcss';
 
-a:focus, a:hover {
+a:focus,
+a:hover {
   background-color: var(--primary);
   color: var(--primary-lighter);
 }
@@ -14,4 +15,10 @@ a:focus, a:hover {
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
+}
+
+.wrapper {
+  max-width: 100rem;
+  margin-right: auto;
+  margin-left: auto;
 }
