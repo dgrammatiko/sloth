@@ -45,11 +45,16 @@ module.exports.css = (input) => {
           gzipFile(outputFile);
       });
 
-      if (!existsSync(`${settings.options.destinationPath}/templates/${dest}/css`)
-        || !readlinkSync(`${settings.options.destinationPath}/templates/${dest}/css`)) {
+      if (!existsSync(`${settings.options.destinationPath}/media/templates/site/${dest}/css`)
+        || !readlinkSync(`${settings.options.destinationPath}/media/templates/site/${dest}/css`)) {
         console.log(yellow(`Linking css -> ${dest}`));
 
-        symlinkSync(`${resolve(process.cwd(), 'tmp')}/css`, `${settings.options.destinationPath}/templates/${dest}/css`);
+        if (!existsSync(resolve(process.cwd(), `${settings.options.destinationPath}/media/templates/site/${dest}`))
+          || !lstatSync(resolve(process.cwd(), `${settings.options.destinationPath}/media/templates/site/${dest}`)).isDirectory()) {
+          mkdirpSync(`${settings.options.destinationPath}/media/templates/site/${dest}`, {recursive: true});
+        }
+
+        symlinkSync(`${resolve(process.cwd(), 'tmp')}/css`, `${settings.options.destinationPath}/media/templates/site/${dest}/css`);
       } else {
         console.log(magenta(`Link already exists, skipping: ${dest}`));
       }

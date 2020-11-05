@@ -1,41 +1,47 @@
-const fs = require('fs-extra');
-const path = require('path');
+const {existsSync, readdir, lstatSync, mkdirpSync, readlinkSync, symlinkSync } = require('fs-extra');
+const {resolve} = require('path');
 const chalk = require('chalk');
 
 const root = process.cwd();
-const settings = require(path.resolve(root, 'settings.json'));
+const settings = require(resolve(root, 'settings.json'));
 const dest = `${settings.options.template}`;
 
 module.exports.link = () => {
+
   // dest is Directory
-  if (fs.lstatSync(path.resolve(process.cwd(), dest)).isDirectory()) {
-    fs.readdir(path.resolve(process.cwd(), dest))
+  if (lstatSync(resolve(process.cwd(), dest)).isDirectory()) {
+    readdir(resolve(process.cwd(), dest))
       .then(results => {
         results.forEach(r => {
           if (r.startsWith('.')) {
             return;
           }
 
-          if (!fs.existsSync(`${settings.options.destinationPath}/templates/${dest}`)) {
-            fs.mkdir(`${settings.options.destinationPath}/templates/${dest}`);
+          if (!existsSync(`${settings.options.destinationPath}/templates/${dest}`)) {
+            mkdirpSync(`${settings.options.destinationPath}/templates/${dest}`);
           }
 
-          if (!fs.existsSync(`${settings.options.destinationPath}/templates/${dest}/${r}`)
-          || !fs.readlinkSync(`${settings.options.destinationPath}/templates/${dest}/${r}`)) {
+          if (!existsSync(`${settings.options.destinationPath}/templates/${dest}/${r}`)
+          || !readlinkSync(`${settings.options.destinationPath}/templates/${dest}/${r}`)) {
             console.log(chalk.yellow(`Linking ${r} -> ${dest}`));
 
-            fs.symlinkSync(`${path.resolve(process.cwd(), `${dest}`)}/${r}`, `${settings.options.destinationPath}/templates/${dest}/${r}`);
+            symlinkSync(`${resolve(process.cwd(), `${dest}`)}/${r}`, `${settings.options.destinationPath}/templates/${dest}/${r}`);
           } else {
             console.log(chalk.magenta(`Link already exists, skipping: ${r}`));
           }
       })
     });
 
-    if (!fs.existsSync(`${settings.options.destinationPath}/templates/${dest}/images`)
-      || !fs.readlinkSync(`${settings.options.destinationPath}/templates/${dest}/images`)) {
+    if (!existsSync(`${settings.options.destinationPath}/media/templates/site/${dest}/images`)
+      || !readlinkSync(`${settings.options.destinationPath}/media/templates/site/${dest}/images`)) {
       console.log(chalk.yellow(`Linking css -> ${dest}`));
 
-      fs.symlinkSync(`${path.resolve(process.cwd(), 'media_src')}/images`, `${settings.options.destinationPath}/templates/${dest}/images`);
+      if (!existsSync(resolve(process.cwd(), `${settings.options.destinationPath}/media/templates/site/${dest}`))
+        || !lstatSync(resolve(process.cwd(), `${settings.options.destinationPath}/media/templates/site/${dest}`)).isDirectory()) {
+        mkdirpSync(`${settings.options.destinationPath}/media/templates/site/${dest}`);
+      }
+
+      symlinkSync(`${resolve(process.cwd(), 'media_src')}/images`, `${settings.options.destinationPath}/media/templates/site/${dest}/images`);
     } else {
       console.log(chalk.magenta(`Link already exists, skipping: /images`));
     }

@@ -51,11 +51,16 @@ module.exports.js = (input) => {
 
       });
 
-      if (!existsSync(`${settings.options.destinationPath}/templates/${dest}/js`)
-        || !readlinkSync(`${settings.options.destinationPath}/templates/${dest}/js`)) {
+      if (!existsSync(`${settings.options.destinationPath}/media/templates/site/${dest}/js`)
+        || !readlinkSync(`${settings.options.destinationPath}/media/templates/site/${dest}/js`)) {
         console.log(yellow(`Linking js -> ${dest}`));
 
-        symlinkSync(`${resolve(process.cwd(), 'tmp')}/js`, `${settings.options.destinationPath}/templates/${dest}/js`);
+        if (!existsSync(resolve(process.cwd(), `${settings.options.destinationPath}/media/templates/site/${dest}`))
+          || !lstatSync(resolve(process.cwd(), `${settings.options.destinationPath}/media/templates/site/${dest}`)).isDirectory()) {
+          mkdirpSync(`${settings.options.destinationPath}/media/templates/site/${dest}`);
+        }
+
+        symlinkSync(`${resolve(process.cwd(), 'tmp')}/js`, `${settings.options.destinationPath}/media/templates/site/${dest}/js`);
       } else {
         console.log(magenta(`Link already exists, skipping: ${dest}`));
       }

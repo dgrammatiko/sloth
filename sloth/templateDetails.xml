@@ -7,8 +7,11 @@
   <authorEmail>d.grammatiko@gmail.com</authorEmail>
   <copyright>Copyright (C) 2020 Dimitris Grammatikogiannis. All rights reserved.</copyright>
   <description>Another (hopefully not slothy) template</description>
+  <inheritable>1</inheritable>
   <scriptfile>script.php</scriptfile>
   <files>
+    <folder>helper</folder>
+    <folder>html</folder>
     <filename>index.php</filename>
     <filename>400.php</filename>
     <filename>500.php</filename>
@@ -16,17 +19,18 @@
     <filename>footer.php</filename>
     <filename>header.php</filename>
     <filename>nonet.php</filename>
-    <filename>site.json</filename>
     <filename>joomla.asset.json</filename>
     <filename>templateDetails.xml</filename>
+
+  </files>
+  <media folder="media" destination="templates/site/sloth">
     <filename>template_preview.jpg</filename>
     <filename>template_thumbnail.jpg</filename>
+    <filename>site.json</filename>
     <folder>css</folder>
     <folder>js</folder>
-    <folder>html</folder>
-    <folder>helper</folder>
     <folder>images</folder>
-  </files>
+  </media>
   <positions>
     <position>header</position>
     <position>debug</position>

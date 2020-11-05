@@ -28,8 +28,8 @@ class SlothInstallerScript extends \Joomla\CMS\Installer\InstallerScript {
    */
   public function postflight($route, TemplateAdapter $adapter) {
     if (in_array($route, ["install", "discover_install", "update"])) {
-      if (!@copy(JPATH_ROOT . '/templates/sloth/js/sw.min.js', JPATH_ROOT . '/sw.min.js')) {
-        Factory::getApplication()->enqueueMessage('Oops: ', 'Couldn\'t copy the service worker in the root directory');
+      if (!@copy(JPATH_ROOT . '/media/templates/site/sloth/js/sw.min.js', JPATH_ROOT . '/sw.min.js')) {
+        Factory::getApplication()->enqueueMessage('Oops: Couldn\'t copy the service worker in the root directory', 'warning');
       }
     }
     if ($route === 'uninstall') {
