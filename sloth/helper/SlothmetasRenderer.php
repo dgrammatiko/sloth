@@ -8,6 +8,7 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\Helper\TagsHelper;
 use Joomla\CMS\WebAsset\WebAssetAttachBehaviorInterface;
 use Joomla\Utilities\ArrayHelper;
+use Joomla\CMS\HTML\HTMLHelper;
 
 class SlothmetasRenderer extends DocumentRenderer {
 	/**
@@ -85,16 +86,20 @@ class SlothmetasRenderer extends DocumentRenderer {
 			}
 		}
 
+		// Special treatment for child templates
+    $originalsiteJsonFile = '/media/templates/site/' . $this->_doc->template . '/site.json';
+    if (!is_file(JPATH_ROOT . '/media/templates/site/' . $this->_doc->template . '/site.json')) {
+      $originalsiteJsonFile = '/media/templates/site/sloth/site.json';
+    }
     $buffer .= '<meta name="description" content="' . htmlspecialchars($this->_doc->getDescription(), ENT_COMPAT, 'UTF-8') . '">';
 		$buffer .= '<meta name="generator" content="' . htmlspecialchars($this->_doc->getGenerator(), ENT_COMPAT, 'UTF-8') . '">';
 		$buffer .= '<title>' . htmlspecialchars($this->_doc->getTitle(), ENT_COMPAT, 'UTF-8') . '</title>';
     $buffer .= '<meta name="viewport" content="width=device-width,minimum-scale=1">';
     $buffer .= '<meta name="theme-color" content="#fff">';
-    $buffer .= '<link rel="manifest" href="/media/templates/site/' . $this->_doc->template . '/site.json">';
-    $buffer .= '<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/media/templates/site/' . $this->_doc->template . '/images/apple-touch-icon.png">';
-    $buffer .= '<link rel="icon" type="image/png" sizes="32x32" href="/media/templates/site/' . $this->_doc->template . '/images/favicon-32x32.png">';
-    $buffer .= '<link rel="icon" type="image/png" sizes="16x16" href="/media/templates/site/' . $this->_doc->template . '/images/favicon-16x16.png">';
-    $buffer .= '<link rel="mask-icon" type="image/svg" href="/media/templates/site/' . $this->_doc->template . '/images/safari-pinned-tab.svg" color="#50617c">';
+    $buffer .= '<link rel="manifest" href="' . $originalsiteJsonFile . '">';
+    $buffer .= '<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="'. HTMLHelper::image('apple-touch-icon.png', '', [], true, 1) . '">';
+    $buffer .= '<link rel="icon" type="image/png" sizes="32x32" href="'. HTMLHelper::image('favicon-32x32.png', '', [], true, 1) . '">';
+    $buffer .= '<link rel="mask-icon" type="image/svg" href="'. HTMLHelper::image('safari-pinned-tab.svg', '', [], true, 1) . '" color="#50617c">';
 
 		// Generate link declarations
 		foreach ($this->_doc->_links as $link => $linkAtrr) {
