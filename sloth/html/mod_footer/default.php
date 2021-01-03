@@ -11,5 +11,5 @@ $wa->useStyle('mod_footer.default');
 echo
 '<footer class="main">',
   '<div class="items">Sloth is a free joomla4  PWA template</div>',
-  '<div class="items">Copyright Ⓒ' . date("Y") . '  <a href="https://dgrammatiko.online">D. Grammatikogiannis</a></div>',
+  '<div class="items">Copyright Ⓒ 2019-' . date("Y") . '  <a rel="external" href="https://dgrammatiko.online">D. Grammatikogiannis</a></div>',
 '</footer>';

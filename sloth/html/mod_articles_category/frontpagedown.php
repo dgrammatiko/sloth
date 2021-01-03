@@ -16,7 +16,7 @@ echo
 
 '<section>',
 '<header class="g-center">',
-  '<h2 class="g-center">' . $list[0]->title . '</h2>',
+  '<h2>' . $list[0]->title . '</h2>',
 '</header>',
 '<div class="posts">';
 
@@ -33,8 +33,8 @@ for ($i = 0; $i < count($list); $i++) {
 
   echo
   '<article class="box">',
-    '<a href="' . $list[$i]->link . '" title="' . $list[$i]->title . '" class="image">' . $image . '</a>',
-    '<h3><a href="' . $list[$i]->link . '" title="' . $list[$i]->title . '" class="image">' . $list[$i]->title  . '</a></h3>',
+    '<a href="' . $list[$i]->link . '" title="' . $list[$i]->title . '">' . $image . '</a>',
+    '<h3><a href="' . $list[$i]->link . '" title="' . $list[$i]->title . '">' . $list[$i]->title  . '</a></h3>',
     $list[$i]->introtext,
 //    '<a href="' . $list[$i]->link . '" title="' . $list[$i]->title . '">' . $list[$i]->title . '</a>',
   '</article>';

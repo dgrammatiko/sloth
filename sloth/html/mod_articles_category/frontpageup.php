@@ -30,7 +30,7 @@ echo
       '<h1>' . $list[0]->title . '</h1>',
     '</header>',
     '<p>' . $list[0]->introtext . '</p>',
-    '<a href="' . $list[0]->link . '" class="button">' . $list[0]->title . '</a>',
+    '<a class="button" href="' . $list[0]->link . '">' . $list[0]->title . '</a>',
   '</div>',
   '<span class="image object">',
     $image,

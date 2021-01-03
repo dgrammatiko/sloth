@@ -28,7 +28,17 @@
 }
 
 .logo {
-  padding: 1rem;
+  padding: .8rem 1rem 0 1rem;
+  color: var(--primary);
+}
+
+.logo:hover,
+.logo:focus {
+  background-color: var(--primary);
+  box-shadow: 0 0 .3rem var(--primary);
+  color: var(--primary-bg);
+  outline: 0;
+  text-decoration: none;
 }
 
 .social li {
@@ -66,8 +76,13 @@
   text-transform: none;
 }
 
+.logo:focus,
+.logo:hover,
 .burger:focus,
-.burger:hover {
+.burger:hover{
   background-color: var(--primary);
-  color: var(--secondary-bg);
+  box-shadow: 0 0 .3rem var(--primary);
+  color: var(--primary-bg);
+  outline: 0;
+  text-decoration: none;
 }

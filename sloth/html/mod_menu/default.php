@@ -17,7 +17,7 @@ $id = empty($tagId) ? '' : ' id="' . $tagId . '"';
 echo
 
 '<nav class="navbar main" style="display: none">',
-  '<button type="button" class="navClose">',
+  '<button type="button" class="button navClose">',
   'Close  <span aria-hidden="true" style="font-size: 1.2rem">ⓧ</span>',
   '</button>',
   '<ul class="nav-links">';

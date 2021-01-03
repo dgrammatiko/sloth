@@ -1,18 +1,48 @@
 @import '_variables';
-@import 'naf-css/src/base';
-@import 'naf-css/src/forms/button.pcss';
+@import 'naf-css/src/base/*.css';
+@import 'naf-css/src/elements/*.css';
 
-a:focus,
-a:hover {
-  background-color: var(--primary);
-  color: var(--primary-lighter);
-}
-
-.button {
+a.button {
+  -webkit-appearance: none;
+  background-color: rgba(204,51,51,.05);
+  background-color: var(--primary-transparent);
+  border: 1px solid #c33;
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+  border-radius: var(--border-radius);
+  color: #c33;
+  color: var(--primary);
+  display: inline-block;
+  font-size: inherit;
+  line-height: 1;
+  overflow: visible;
+  padding: 1rem 2.5rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  transition: opacity .2s ease;
   text-decoration: none !important;
 }
+a.button:hover,
+a.button:focus {
+  background-color: #c33;
+  background-color: var(--primary);
+  border: 1px solid #c33;
+  border: 1px solid var(--primary);
+  box-shadow: 0 0 .3rem #c33;
+  box-shadow: 0 0 .3rem var(--primary);
+  color: #fff;
+  color: var(--primary-bg);
+  cursor: pointer;
+  outline: 0;
+}
+
 
 body {
+  margin: 0;
+  padding: 0;
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
@@ -21,4 +51,9 @@ body {
   max-width: 100rem;
   margin-right: auto;
   margin-left: auto;
+}
+
+img[loading="lazy"] {
+  width: 100%;
+  height: auto;
 }

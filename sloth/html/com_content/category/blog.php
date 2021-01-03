@@ -41,10 +41,10 @@ for ($i = 0; $i < count($this->items); $i++) {
   }
   echo
   '<article>',
-    '<a href="' . Route::_(RouteHelper::getArticleRoute($this->items[$i]->slug, $this->items[$i]->catid, $this->items[$i]->language)) . '" class="image">' . $image . '</a>',
+    '<a href="' . Route::_(RouteHelper::getArticleRoute($this->items[$i]->slug, $this->items[$i]->catid, $this->items[$i]->language)) . '">' . $image . '</a>',
     '<h3>' . $this->items[$i]->title . '</h3>',
     $this->items[$i]->introtext,
-    '<a href="' . Route::_(RouteHelper::getArticleRoute($this->items[$i]->slug, $this->items[$i]->catid, $this->items[$i]->language)) . '" class="button">' . $this->items[$i]->title . '</a>',
+    '<a href="' . Route::_(RouteHelper::getArticleRoute($this->items[$i]->slug, $this->items[$i]->catid, $this->items[$i]->language)) . '">' . $this->items[$i]->title . '</a>',
   '</article>';
 }
 

@@ -5,7 +5,7 @@
       "name": "template.base",
       "type": "style",
       "uri": "base.min.css",
-      "version": "c92c0d113051f7c75184ad9ca0c9355bf591bd47f360e906b27844b96fa63ffc",
+      "version": "52c7151dfa53b365d95a2b106af607a101bf4bcac800e357bf86401d9dbd0165",
       "attributes": {
         "inline": "true"
       }
@@ -14,7 +14,7 @@
       "name": "com_content.category_blog",
       "type": "style",
       "uri": "com_content/category_blog.min.css",
-      "version": "6ab669e5dc7aa005266794a6be29ad64c38233b27d723c15745bf10611951555",
+      "version": "19c4ef0aea9372d579a04ffb4ef33d02d8c79e622f9d66046ed63f2b91ced82a",
       "attributes": {
         "inline": "true"
       }
@@ -23,7 +23,7 @@
       "name": "com_landing.default",
       "type": "style",
       "uri": "com_landing/default.min.css",
-      "version": "6dccf5334dd8a3546af7b5653bfdef6767dabd8b936247a101c53b16c77749f9",
+      "version": "d2ca2cf9d79fec09fb636ea3976211c63c466d9de7a37bd18cffca57804366ad",
       "attributes": {
         "inline": "true"
       }
@@ -32,7 +32,7 @@
       "name": "mod_custom.header",
       "type": "style",
       "uri": "mod_custom/header.min.css",
-      "version": "ace6f57b22b0edd193467c00dcb54500c246cb3d344313a1a89918f0a32c5421",
+      "version": "b17926d69bf2502ef5446baf73a939b85529a48e4012b24f7775308fa4a36c94",
       "attributes": {
         "inline": "true"
       }
@@ -41,7 +41,7 @@
       "name": "mod_menu.default",
       "type": "style",
       "uri": "mod_menu/default.min.css",
-      "version": "6253fa1124d7e6c78409ef3c3ad0639d8e96976e780b37c40194a66f636ddf6c",
+      "version": "16bf05cf6980dae17018bfcf9e70903af8d620d271ec834368b1ad9695797938",
       "attributes": {
         "inline": "true"
       }
@@ -59,7 +59,7 @@
       "name": "mod_menu.default",
       "type": "script",
       "uri": "mod_menu/default.min.js",
-      "version": "0cac65959f27a13f2a64747cec2cfefa98db18a5641d0d277852f6178e06f5c5",
+      "version": "74b9685e38f166a3261ac0c090a365ed9c47e1bf359e07fdc1abdeb92acf407a",
       "attributes": {
         "type": "module",
         "defer": "true"

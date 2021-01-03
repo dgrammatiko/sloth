@@ -95,10 +95,10 @@ class SlothmetasRenderer extends DocumentRenderer {
 		$buffer .= '<meta name="generator" content="' . htmlspecialchars($this->_doc->getGenerator(), ENT_COMPAT, 'UTF-8') . '">';
 		$buffer .= '<title>' . htmlspecialchars($this->_doc->getTitle(), ENT_COMPAT, 'UTF-8') . '</title>';
     $buffer .= '<meta name="viewport" content="width=device-width,minimum-scale=1">';
-    $buffer .= '<meta name="theme-color" content="#fff">';
     $buffer .= '<link rel="manifest" href="' . $originalsiteJsonFile . '">';
     $buffer .= '<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="'. HTMLHelper::image('apple-touch-icon.png', '', [], true, 1) . '">';
-    $buffer .= '<link rel="icon" type="image/png" sizes="32x32" href="'. HTMLHelper::image('favicon-32x32.png', '', [], true, 1) . '">';
+    $buffer .= '<link rel="icon" type="image/png" href="'. HTMLHelper::image('favicon-32x32.png', '', [], true, 1) . '">';
+    $buffer .= '<link rel="icon alternative" type="image/png" sizes="32x32" href="'. HTMLHelper::image('favicon-32x32.png', '', [], true, 1) . '">';
     $buffer .= '<link rel="mask-icon" type="image/svg" href="'. HTMLHelper::image('safari-pinned-tab.svg', '', [], true, 1) . '" color="#50617c">';
 
 		// Generate link declarations

@@ -22,7 +22,7 @@ function onClick() {
 
   if (burgerElement.getAttribute('aria-expanded') === 'true') {
     navElement.style.display = 'block';
-    navCloseElement.focus();
+
     focusableElements = [].slice.call(navElement.querySelectorAll(focusableSelectors.join()));
     if (focusableElements.length) {
       focusableElements[0].focus();
