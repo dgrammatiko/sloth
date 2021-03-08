@@ -32,7 +32,7 @@
       "name": "mod_custom.header",
       "type": "style",
       "uri": "mod_custom/header.min.css",
-      "version": "b17926d69bf2502ef5446baf73a939b85529a48e4012b24f7775308fa4a36c94",
+      "version": "7c7685bb0d4021702eec7febd2cd44d690e2b28ff2e21bf96e677c1077b29cab",
       "attributes": {
         "inline": "true"
       }
@@ -41,7 +41,7 @@
       "name": "mod_menu.default",
       "type": "style",
       "uri": "mod_menu/default.min.css",
-      "version": "16bf05cf6980dae17018bfcf9e70903af8d620d271ec834368b1ad9695797938",
+      "version": "af63dbecd0316c083ad7eb4cf43e3207ffa5d7fc462f9abbfc32166f6bc8dad1",
       "attributes": {
         "inline": "true"
       }

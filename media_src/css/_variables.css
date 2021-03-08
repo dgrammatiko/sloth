@@ -75,13 +75,14 @@
 /*  }*/
 /*}*/
 
-/*:root.is-dark { !* :root is <html> for HTML documents *!*/
-/*  --primaryH: 185;*/
-/*  --primaryS: 100%;*/
-/*  --primaryL: 86%;*/
-/*  --primary-bg: #263238;*/
-/*  --secondaryH: 0;*/
-/*  --secondaryS: 1%;*/
-/*  --secondaryL: 89%;*/
-/*  --secondary-bg: #263238;*/
-/*}*/
+:root{
+ --primaryH: 185;
+ --primaryS: 100%;
+ --primaryL: 86%;
+ --primary-bg: #000;
+ --secondaryH: 0;
+ --secondaryS: 1%;
+ --secondaryL: 89%;
+ --secondary-bg: #263238;
+}
+ /* .is-dark  */

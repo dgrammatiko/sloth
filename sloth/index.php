@@ -8,16 +8,15 @@ use Joomla\CMS\HTML\HTMLHelper;
 /** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 
 // Override the default Renderers
-include_once __DIR__ . '/helper/SlothmetasRenderer.php';
-include_once __DIR__ . '/helper/SlothstylesRenderer.php';
-include_once __DIR__ . '/helper/SlothscriptsRenderer.php';
+include_once JPATH_THEMES .'/sloth/helper/SlothmetasRenderer.php';
+include_once JPATH_THEMES .'/sloth/helper/SlothstylesRenderer.php';
+include_once JPATH_THEMES .'/sloth/helper/SlothscriptsRenderer.php';
 
 $app = Factory::getApplication();
 
 // Browsers support SVG favicons
 $this->addHeadLink(HTMLHelper::_('image', 'sloth-favicon.svg', '', [], true, 1), 'icon', 'rel', ['type' => 'image/svg+xml']);
 $this->addHeadLink(HTMLHelper::_('image', 'favicon.ico', '', [], true, 1), 'alternate icon', 'rel', ['type' => 'image/vnd.microsoft.icon']);
-$this->addHeadLink(HTMLHelper::_('image', 'sloth-favicon-pinned.svg', '', [], true, 1), 'mask-icon', 'rel', ['color' => '#000']);
 
 /**
  * Register the template assets Either:
@@ -35,7 +34,7 @@ setcookie(
   $app->get('cookie_domain')
 );
 
-$this->getWebAssetManager()->addInlineScript('if ("serviceWorker" in navigator) { window.addEventListener("load", () => { navigator.serviceWorker.register("/sw.min.js"); }); }', [], ['type' => 'module']);
+$this->getWebAssetManager()->addInlineScript('if ("serviceWorker" in navigator) { window.addEventListener("load", function(){ navigator.serviceWorker.register("/sw.min.js"); }); }', [], ['type' => 'module']);
 
 // Get the output for all the template sections
 $component = $this->getBuffer('component');
