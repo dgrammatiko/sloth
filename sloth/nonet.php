@@ -1,5 +1,4 @@
-<?php
-defined('_JEXEC') || die('<html><head><script>location.href = location.origin</script></head></html>');
+<?php defined('_JEXEC') || die('<html><head><script>location.href = location.origin</script></head></html>');
 
 use Joomla\CMS\Factory;
 
@@ -8,13 +7,14 @@ use Joomla\CMS\Factory;
 $app = Factory::getApplication();
 
 // Purge the useless cookie for the front end, it's 2020!
-//$app->input->cookie->set($app->getSession()->getName(), false, ['expires' => time() - 42000, 'path' => $app->get('cookie_path', '/'), 'domain' => $app->get('cookie_domain')]);
-setcookie(
-  Factory::getSession()->getName(),
-  '',
-  time() - 3600, $app->get('cookie_path', '/'),
-  $app->get('cookie_domain')
-);
+setcookie(Factory::getSession()->getName(), '', [
+    'expires' => time() - 3600,
+    'path' => $app->get('cookie_path', '/'),
+    'domain' => $app->get('cookie_domain'),
+    'secure' => true,
+    'httponly' => false,
+    'samesite' => 'strict',
+]);
 
 // Render the page
 echo

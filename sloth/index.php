@@ -1,5 +1,4 @@
-<?php
-defined('_JEXEC') || die('<html><head><script>location.href = location.origin</script></head></html>');
+<?php defined('_JEXEC') || die('<html><head><script>location.href = location.origin</script></head></html>');
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
@@ -26,13 +25,14 @@ $this->addHeadLink(HTMLHelper::_('image', 'favicon.ico', '', [], true, 1), 'alte
 $this->getWebAssetManager()->useStyle('template.base');
 
 // Purge the useless cookie for the front end, no cookie consent modal!
-//$app->input->cookie->set($app->getSession()->getName(), false, ['expires' => time() - 42000, 'path' => $app->get('cookie_path', '/'), 'domain' => $app->get('cookie_domain')]);
-setcookie(
-  Factory::getSession()->getName(),
-  '',
-  time() - 3600, $app->get('cookie_path', '/'),
-  $app->get('cookie_domain')
-);
+setcookie(Factory::getSession()->getName(), '', [
+    'expires' => time() - 3600,
+    'path' => $app->get('cookie_path', '/'),
+    'domain' => $app->get('cookie_domain'),
+    'secure' => true,
+    'httponly' => false,
+    'samesite' => 'strict',
+]);
 
 $this->getWebAssetManager()->addInlineScript('if ("serviceWorker" in navigator) { window.addEventListener("load", function(){ navigator.serviceWorker.register("/sw.min.js"); }); }', [], ['type' => 'module']);
 
