@@ -35,7 +35,6 @@
     "fdir": "^2.0.3",
     "fs-extra": "^8.1.0",
     "git-clone": "^0.1.0",
-    "iltorb": "^2.4.5",
     "postcss": "8.2.1",
     "postcss-cli": "8.3.1",
     "postcss-custom-media": "7.0.8",

@@ -24,8 +24,6 @@
 
   </files>
   <media folder="media" destination="templates/site/sloth">
-    <filename>template_preview.jpg</filename>
-    <filename>template_thumbnail.jpg</filename>
     <filename>site.json</filename>
     <folder>css</folder>
     <folder>js</folder>
