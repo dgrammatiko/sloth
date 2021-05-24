@@ -51,6 +51,6 @@
     "stylelint-config-recommended": "^3.0.0"
   },
   "dependencies": {
-    "naf-css": "2.0.0"
+    "naf-css": "1.0.2"
   }
 }
