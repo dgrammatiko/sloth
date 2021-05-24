@@ -41,8 +41,6 @@ module.exports.link = () => {
         mkdirpSync(`${settings.options.destinationPath}/media/templates/site/${dest}`);
       }
 
-      symlinkSync(`${resolve(process.cwd(), 'media_src')}/template_preview.jpg`, `${settings.options.destinationPath}/media/templates/site/${dest}/template_preview.jpg`);
-      symlinkSync(`${resolve(process.cwd(), 'media_src')}/template_thumbnail.jpg`, `${settings.options.destinationPath}/media/templates/site/${dest}/template_thumbnail.jpg`);
       symlinkSync(`${resolve(process.cwd(), 'media_src')}/site.json`, `${settings.options.destinationPath}/media/templates/site/${dest}/site.json`);
       symlinkSync(`${resolve(process.cwd(), 'media_src')}/images`, `${settings.options.destinationPath}/media/templates/site/${dest}/images`);
     } else {

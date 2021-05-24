@@ -1,17 +1,21 @@
-<?php
-defined('_JEXEC') || die('<html><head><script>location.href = location.origin</script></head></html>');
+<?php defined('_JEXEC') || die('<html><head><script>location.href = location.origin</script></head></html>');
 
 use Joomla\CMS\Factory;
+use Joomla\CMS\HTML\HTMLHelper;
 
 /** @var Joomla\CMS\Document\HtmlDocument $this */
 /** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 
 // Override the default Renderers
-include_once __DIR__ . '/helper/SlothmetasRenderer.php';
-include_once __DIR__ . '/helper/SlothstylesRenderer.php';
-include_once __DIR__ . '/helper/SlothscriptsRenderer.php';
+include_once JPATH_THEMES .'/sloth/helper/SlothmetasRenderer.php';
+include_once JPATH_THEMES .'/sloth/helper/SlothstylesRenderer.php';
+include_once JPATH_THEMES .'/sloth/helper/SlothscriptsRenderer.php';
 
 $app = Factory::getApplication();
+
+// Browsers support SVG favicons
+$this->addHeadLink(HTMLHelper::_('image', 'sloth-favicon.svg', '', [], true, 1), 'icon', 'rel', ['type' => 'image/svg+xml']);
+$this->addHeadLink(HTMLHelper::_('image', 'favicon.ico', '', [], true, 1), 'alternate icon', 'rel', ['type' => 'image/vnd.microsoft.icon']);
 
 /**
  * Register the template assets Either:
@@ -21,13 +25,16 @@ $app = Factory::getApplication();
 $this->getWebAssetManager()->useStyle('template.base');
 
 // Purge the useless cookie for the front end, no cookie consent modal!
-//$app->input->cookie->set($app->getSession()->getName(), false, ['expires' => time() - 42000, 'path' => $app->get('cookie_path', '/'), 'domain' => $app->get('cookie_domain')]);
-setcookie(
-  Factory::getSession()->getName(),
-  '',
-  time() - 3600, $app->get('cookie_path', '/'),
-  $app->get('cookie_domain')
-);
+setcookie(Factory::getSession()->getName(), '', [
+    'expires' => time() - 3600,
+    'path' => $app->get('cookie_path', '/'),
+    'domain' => $app->get('cookie_domain'),
+    'secure' => true,
+    'httponly' => false,
+    'samesite' => 'strict',
+]);
+
+$this->getWebAssetManager()->addInlineScript('if ("serviceWorker" in navigator) { window.addEventListener("load", function(){ navigator.serviceWorker.register("/sw.min.js"); }); }', [], ['type' => 'module']);
 
 // Get the output for all the template sections
 $component = $this->getBuffer('component');
@@ -54,6 +61,5 @@ echo
       '</div>',
     '</main>',
     $footer,
-    '<script type="module">if ("serviceWorker" in navigator) { window.addEventListener("load", () => { navigator.serviceWorker.register("/sw.min.js"); }); }</script>',
   '</body>',
 '</html>';

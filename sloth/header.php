@@ -1,5 +1,4 @@
-<?php
-defined('_JEXEC') || die('<html><head><script>location.href = location.origin</script></head></html>');
+<?php defined('_JEXEC') || die('<html><head><script>location.href = location.origin</script></head></html>');
 
 use Joomla\CMS\Factory;
 
@@ -35,12 +34,15 @@ $metas     = $this->getBuffer('Slothmetas');
 $styles    = $this->getBuffer('Slothstyles');
 $scripts   = $this->getBuffer('Slothscripts');
 
-setcookie(
-  Factory::getSession()->getName(),
-  '',
-  time() - 3600, $app->get('cookie_path', '/'),
-  $app->get('cookie_domain')
-);
+setcookie(Factory::getSession()->getName(), '', [
+    'expires' => time() - 3600,
+    'path' => $app->get('cookie_path', '/'),
+    'domain' => $app->get('cookie_domain'),
+    'secure' => true,
+    'httponly' => false,
+    'samesite' => 'strict',
+]);
+
 echo
 '<!doctype html>',
 '<html xml:lang="en">',
