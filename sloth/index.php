@@ -1,21 +1,14 @@
 <?php defined('_JEXEC') || die('<html><head><script>location.href = location.origin</script></head></html>');
 
 use Joomla\CMS\Factory;
-use Joomla\CMS\HTML\HTMLHelper;
 
 /** @var Joomla\CMS\Document\HtmlDocument $this */
 /** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 
 // Override the default Renderers
-include_once JPATH_THEMES .'/sloth/helper/SlothmetasRenderer.php';
-include_once JPATH_THEMES .'/sloth/helper/SlothstylesRenderer.php';
-include_once JPATH_THEMES .'/sloth/helper/SlothscriptsRenderer.php';
+include_once JPATH_THEMES .'/sloth/helper/initialise.php';
 
 $app = Factory::getApplication();
-
-// Browsers support SVG favicons
-$this->addHeadLink(HTMLHelper::_('image', 'sloth-favicon.svg', '', [], true, 1), 'icon', 'rel', ['type' => 'image/svg+xml']);
-$this->addHeadLink(HTMLHelper::_('image', 'favicon.ico', '', [], true, 1), 'alternate icon', 'rel', ['type' => 'image/vnd.microsoft.icon']);
 
 /**
  * Register the template assets Either:

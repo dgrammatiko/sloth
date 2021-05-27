@@ -6,9 +6,7 @@ use Joomla\CMS\Factory;
 /** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 
 // Override the default Renderers
-include_once __DIR__ . '/helper/SlothmetasRenderer.php';
-include_once __DIR__ . '/helper/SlothstylesRenderer.php';
-include_once __DIR__ . '/helper/SlothscriptsRenderer.php';
+include_once JPATH_THEMES .'/sloth/helper/initialise.php';
 
 $app = Factory::getApplication();
 $wa = $this->getWebAssetManager();

@@ -55,27 +55,40 @@
 }
 
 /* Dark/Light Theme */
-/*@media (prefers-color-scheme: dark) {*/
-/*  :root:not(.is-light) { !* :root is <html> for HTML documents *!*/
-/*    --primaryH: 185;*/
-/*    --primaryS: 100%;*/
-/*    --primaryL: 86%;*/
-/*    --primary-bg: #263238;*/
-/*    --secondaryH: 0;*/
-/*    --secondaryS: 1%;*/
-/*    --secondaryL: 89%;*/
-/*    --secondary-bg: #263238;*/
-/*  }*/
-/*  img {*/
-/*    opacity: .75;*/
-/*    transition: opacity .5s ease-in-out;*/
-/*  }*/
-/*  img:hover {*/
-/*    opacity: 1;*/
-/*  }*/
-/*}*/
+@media (prefers-color-scheme: dark) {
+ :root:not(.is-light) {
+   --primaryH: 185;
+   --primaryS: 100%;
+   --primaryL: 86%;
+   --primary-bg: #263238;
+   --secondaryH: 0;
+   --secondaryS: 1%;
+   --secondaryL: 89%;
+   --secondary-bg: #263238;
+ }
+ img {
+   opacity: .75;
+   transition: opacity .5s ease-in-out;
+ }
+ img:hover {
+   opacity: 1;
+ }
+}
 
-:root{
+/* Dark/Light Theme */
+@media (prefers-color-scheme: light) {
+ :root:not(.is-dark) {
+  --primaryH: 0;
+  --primaryS: 60%;
+  --primaryL: 50%;
+  --primary-bg: #fff;
+  --secondaryH: 0;
+  --secondaryS: 0%;
+  --secondaryL: 27%;
+  --secondary-bg: #fff;
+ }
+}
+/* :root{
  --primaryH: 185;
  --primaryS: 100%;
  --primaryL: 86%;
@@ -84,5 +97,5 @@
  --secondaryS: 1%;
  --secondaryL: 89%;
  --secondary-bg: #263238;
-}
+} */
  /* .is-dark  */
