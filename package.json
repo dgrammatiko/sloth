@@ -28,7 +28,7 @@
     "@rollup/plugin-babel": "5.0.4",
     "@rollup/plugin-replace": "3.0.0",
     "autoprefixer": "9.8.6",
-    "chalk": "3.0.0",
+    "chalk": "4.1.2",
     "commander": "8.1.0",
     "cssnano": "4.1.10",
     "eslint": "7.32.0",
