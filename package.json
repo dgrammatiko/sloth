@@ -27,7 +27,7 @@
     "@gfx/zopfli": "1.0.14",
     "@rollup/plugin-babel": "5.0.4",
     "@rollup/plugin-replace": "3.0.0",
-    "autoprefixer": "9.8.6",
+    "autoprefixer": "9.8.8",
     "chalk": "4.1.2",
     "commander": "8.1.0",
     "cssnano": "5.0.0",
