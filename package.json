@@ -43,7 +43,7 @@
     "postcss-easy-import": "3.0.0",
     "postcss-mixins": "7.0.3",
     "postcss-nested": "5.0.6",
-    "postcss-preset-env": "6.7.0",
+    "postcss-preset-env": "6.7.1",
     "recursive-readdir": "2.2.2",
     "rollup": "2.56.3",
     "rollup-plugin-terser": "6.1.0",
