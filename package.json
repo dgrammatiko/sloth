@@ -36,7 +36,7 @@
     "fs-extra": "10.1.0",
     "git-clone": "0.2.0",
     "postcss": "8.4.21",
-    "postcss-cli": "8.3.1",
+    "postcss-cli": "10.1.0",
     "postcss-custom-media": "7.0.8",
     "postcss-custom-selectors": "5.1.2",
     "postcss-discard-comments": "4.0.2",
