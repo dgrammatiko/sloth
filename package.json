@@ -39,7 +39,7 @@
     "postcss-cli": "8.3.1",
     "postcss-custom-media": "7.0.8",
     "postcss-custom-selectors": "5.1.2",
-    "postcss-discard-comments": "4.0.2",
+    "postcss-discard-comments": "6.0.1",
     "postcss-easy-import": "3.0.0",
     "postcss-mixins": "7.0.3",
     "postcss-nested": "5.0.6",
