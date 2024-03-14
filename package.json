@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/dgrammatiko/sloth#readme",
   "devDependencies": {
-    "@gfx/zopfli": "1.0.14",
+    "@gfx/zopfli": "1.0.15",
     "@rollup/plugin-babel": "6.0.3",
     "@rollup/plugin-replace": "5.0.2",
     "autoprefixer": "9.8.8",
